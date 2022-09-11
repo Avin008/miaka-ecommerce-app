@@ -2,7 +2,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 const Cart = () => {
   return (
     <div className="">
-      <HiOutlineShoppingBag size={"1.8rem"} />
+      <HiOutlineShoppingBag size={"1.5rem"} />
     </div>
   );
 };

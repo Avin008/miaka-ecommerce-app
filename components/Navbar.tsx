@@ -20,7 +20,7 @@ const Navbar = () => {
         <li className="cursor-pointer">HOME</li>
         <li className="cursor-pointer">PRODUCTS</li>
         <li className="cursor-pointer">
-          <HiOutlineUser size={"1.8rem"} />
+          <HiOutlineUser size={"1.5rem"} />
         </li>
         <li className="relative cursor-pointer">
           <Wishlist />
