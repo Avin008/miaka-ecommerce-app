@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         ["sans"]: ["Lato", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        sm: "300px",
+      },
     },
   },
   plugins: [scrollbarHide],
