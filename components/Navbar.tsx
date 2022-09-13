@@ -2,6 +2,7 @@ import Link from "next/link";
 import Cart from "./Cart";
 import User from "./User";
 import Search from "./Search";
+import Wishlist from "./Wishlist";
 
 const Navbar = (): React.ReactElement => {
   return (
@@ -28,6 +29,9 @@ const Navbar = (): React.ReactElement => {
         </li>
         <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
           <User />
+        </li>
+        <li className="relative flex cursor-pointer items-center justify-center hover:text-yellow-800">
+          <Wishlist />
         </li>
         <li className="relative flex cursor-pointer items-center justify-center hover:text-yellow-800">
           <Cart />
