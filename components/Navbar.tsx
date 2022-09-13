@@ -28,7 +28,11 @@ const Navbar = (): React.ReactElement => {
           <Search />
         </li>
         <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
-          <User />
+          <Link href="/login">
+            <a>
+              <User />
+            </a>
+          </Link>
         </li>
         <li className="relative flex cursor-pointer items-center justify-center hover:text-yellow-800">
           <Wishlist />
