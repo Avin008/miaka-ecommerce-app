@@ -15,17 +15,21 @@ const Navbar = (): React.ReactElement => {
       </Link>
 
       <ul
-        className={`sm: fixed bottom-0 flex gap-6 font-semibold text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t  sm:border-gray-300 sm:p-3 sm:shadow-sm md:static md:border-none md:shadow-none`}
+        className={`sm: fixed bottom-0 flex gap-6 font-semibold text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t  sm:border-gray-300 sm:p-3 sm:shadow-sm md:static md:border-none md:shadow-none lg:p-0`}
       >
-        <li className="cursor-pointer hover:text-yellow-800">HOME</li>
-        <li className="cursor-pointer hover:text-yellow-800">PRODUCTS</li>
-        <li className="cursor-pointer hover:text-yellow-800">
+        <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
+          HOME
+        </li>
+        <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
+          PRODUCTS
+        </li>
+        <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
           <Search />
         </li>
-        <li className="cursor-pointer hover:text-yellow-800">
+        <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
           <User />
         </li>
-        <li className="relative cursor-pointer hover:text-yellow-800">
+        <li className="relative flex cursor-pointer items-center justify-center hover:text-yellow-800">
           <Cart />
         </li>
       </ul>
