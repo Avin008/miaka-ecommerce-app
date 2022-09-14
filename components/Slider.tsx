@@ -28,9 +28,9 @@ const Slider = () => {
       <span className="absolute bottom-1 z-10 flex w-full items-center justify-center gap-2 text-2xl text-white">
         {sliderImg.map((x, index) => {
           if (index === slider) {
-            return <GoPrimitiveDot className="text-yellow-600" />;
+            return <GoPrimitiveDot key={x} className="text-yellow-600" />;
           } else {
-            return <GoPrimitiveDot />;
+            return <GoPrimitiveDot key={x} />;
           }
         })}
       </span>
