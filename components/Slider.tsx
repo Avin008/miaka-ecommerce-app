@@ -14,10 +14,10 @@ const Slider = () => {
   useEffect(() => {
     setInterval(() => {
       setSlider((prev) => {
-        if (prev <= 0) {
-          return sliderImg.length - 1;
+        if (prev >= sliderImg.length - 1) {
+          return 0;
         } else {
-          return (prev -= 1);
+          return (prev += 1);
         }
       });
     }, 5000);
