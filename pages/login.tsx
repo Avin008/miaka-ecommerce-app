@@ -34,10 +34,10 @@ const Login = (): React.ReactElement => {
           </div>
           <div className="pt-3">
             <span className="flex flex-col space-y-2">
-              <button className="border border-gray-500 p-2 font-semibold">
+              <button className="rounded-sm border border-gray-500 p-2 font-semibold">
                 Login
               </button>
-              <button className="bg-yellow-800 p-2 font-semibold text-white">
+              <button className="rounded-sm bg-yellow-800 p-2 font-semibold text-white">
                 Login As Guest
               </button>
             </span>

@@ -53,7 +53,7 @@ const Signup = () => {
           </div>
           <div className="pt-3">
             <span className="flex flex-col space-y-2">
-              <button className="bg-yellow-800 p-2 font-semibold text-white">
+              <button className="rounded-sm bg-yellow-800 p-2 font-semibold text-white">
                 Sign Up
               </button>
             </span>
