@@ -1,7 +1,7 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { GoPrimitiveDot } from "react-icons/go";
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import useSlider from "../hooks/useSlider";
 
 const sliderImg = [
   "https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
@@ -10,42 +10,16 @@ const sliderImg = [
 ];
 
 const Slider = () => {
-  const [slider, setSlider] = useState(0);
-
-  const increaseSlider = () => {
-    setSlider((prev) => {
-      if (prev >= sliderImg.length - 1) {
-        return 0;
-      } else {
-        return (prev += 1);
-      }
-    });
-  };
-
-  const decreaseSlider = () => {
-    setSlider((prev) => {
-      if (prev <= 0) {
-        return sliderImg.length - 1;
-      } else {
-        return (prev -= 1);
-      }
-    });
-  };
-
-  useEffect(() => {
-    setInterval(() => {
-      increaseSlider();
-    }, 6000);
-  }, []);
+  const { slider, increaseSlider, decreaseSlider } = useSlider(sliderImg);
 
   return (
     <div className="relative flex h-72 select-none items-center border border-yellow-600">
       <span className="absolute bottom-1 z-10 flex w-full items-center justify-center gap-2 text-2xl text-white">
         {sliderImg.map((x, index) => {
           if (index === slider) {
-            return <GoPrimitiveDot key={x} className="text-yellow-600" />;
+            return <GoPrimitiveDot key={index} className="text-yellow-600" />;
           } else {
-            return <GoPrimitiveDot key={x} />;
+            return <GoPrimitiveDot key={index} />;
           }
         })}
       </span>
