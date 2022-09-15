@@ -4,7 +4,7 @@ import Image from "next/image";
 import useSlider from "../hooks/useSlider";
 
 const sliderImg = [
-  "https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1545535408-2b4d520cbd88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHNhbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
   "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGNsb3RoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
   "https://images.unsplash.com/photo-1582142839970-2b9e04b60f65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGNsb3RoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
 ];
@@ -13,7 +13,7 @@ const Slider = () => {
   const { slider, increaseSlider, decreaseSlider } = useSlider(sliderImg);
 
   return (
-    <div className="relative flex h-72 select-none items-center border border-yellow-600">
+    <div className="relative mx-auto flex h-72 select-none items-center rounded-lg border border-yellow-600 shadow-lg">
       <span className="absolute bottom-1 z-10 flex w-full items-center justify-center gap-2 text-2xl text-white">
         {sliderImg.map((x, index) => {
           if (index === slider) {
@@ -30,7 +30,7 @@ const Slider = () => {
         layout="fill"
         objectFit="cover"
         src={sliderImg[slider]}
-        className="opacity-90"
+        className="rounded-lg opacity-90"
       />
 
       <span className="absolute right-0 z-10" onClick={() => increaseSlider()}>
