@@ -1,6 +1,7 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const sliderImg = [
   "https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
@@ -11,16 +12,30 @@ const sliderImg = [
 const Slider = () => {
   const [slider, setSlider] = useState(0);
 
+  const increaseSlider = () => {
+    setSlider((prev) => {
+      if (prev >= sliderImg.length - 1) {
+        return 0;
+      } else {
+        return (prev += 1);
+      }
+    });
+  };
+
+  const decreaseSlider = () => {
+    setSlider((prev) => {
+      if (prev <= 0) {
+        return sliderImg.length - 1;
+      } else {
+        return (prev -= 1);
+      }
+    });
+  };
+
   useEffect(() => {
     setInterval(() => {
-      setSlider((prev) => {
-        if (prev >= sliderImg.length - 1) {
-          return 0;
-        } else {
-          return (prev += 1);
-        }
-      });
-    }, 5000);
+      increaseSlider();
+    }, 6000);
   }, []);
 
   return (
@@ -34,37 +49,17 @@ const Slider = () => {
           }
         })}
       </span>
-      <span
-        className="absolute left-0 z-10"
-        onClick={() =>
-          setSlider((prev) => {
-            if (prev <= 0) {
-              return sliderImg.length - 1;
-            } else {
-              return (prev -= 1);
-            }
-          })
-        }
-      >
+      <span className="absolute left-0 z-10" onClick={() => decreaseSlider()}>
         <HiChevronLeft size={80} color="white" cursor="pointer" />
       </span>
-      <img
-        className="opacity-800 h-full w-full object-cover"
+      <Image
+        layout="fill"
+        objectFit="cover"
         src={sliderImg[slider]}
+        className="opacity-90"
       />
 
-      <span
-        className="absolute right-0 z-10"
-        onClick={() =>
-          setSlider((prev) => {
-            if (prev >= sliderImg.length - 1) {
-              return 0;
-            } else {
-              return (prev += 1);
-            }
-          })
-        }
-      >
+      <span className="absolute right-0 z-10" onClick={() => increaseSlider()}>
         <HiChevronRight size={80} color="white" cursor="pointer" />
       </span>
     </div>
