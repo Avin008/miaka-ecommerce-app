@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-type funcReturnType = {
+type UseSliderReturn = {
   slider: number;
   increaseSlider: () => void;
   decreaseSlider: () => void;
 };
 
-const useSlider = (imgArr: string[]): funcReturnType => {
+const useSlider = (imgArr: string[]): UseSliderReturn => {
   const [slider, setSlider] = useState<number>(0);
 
   const increaseSlider = (): void => {
@@ -32,7 +32,7 @@ const useSlider = (imgArr: string[]): funcReturnType => {
   useEffect(() => {
     setInterval(() => {
       increaseSlider();
-    }, 6000);
+    }, 10000);
   }, []);
 
   return { slider, increaseSlider, decreaseSlider };
