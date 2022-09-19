@@ -6,7 +6,7 @@ import Wishlist from "./Wishlist";
 
 const Navbar = (): React.ReactElement => {
   return (
-    <div className="fixed left-0 top-0 right-0 z-20 flex h-16 border-b border-gray-300 shadow-sm">
+    <div className="fixed left-0 top-0 right-0 z-20 flex h-16 border-b border-gray-300 bg-[#F5F5F5] shadow-sm">
       <span className="mx-auto flex w-11/12 items-center justify-between">
         <Link href="/">
           <span className="flex items-center gap-1">
