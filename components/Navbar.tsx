@@ -15,7 +15,7 @@ const Navbar = (): React.ReactElement => {
         </Link>
 
         <ul
-          className={`sm: fixed bottom-0 flex gap-6 text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t  sm:border-gray-300 sm:p-3 sm:shadow-sm md:static md:border-none md:shadow-none lg:p-0`}
+          className={`sm: fixed bottom-0  flex gap-6 text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t sm:border-gray-300  sm:bg-[#F5F5F5] sm:p-3 sm:shadow-sm md:static md:border-none md:shadow-none lg:p-0`}
         >
           <li className="cursor-pointer items-center justify-center hover:text-yellow-800 sm:hidden md:flex">
             <Link href="/">
