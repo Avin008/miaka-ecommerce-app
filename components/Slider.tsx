@@ -31,6 +31,7 @@ const Slider = () => {
         objectFit="cover"
         src={sliderImg[slider]}
         className="rounded-lg opacity-90"
+        alt="slider"
       />
 
       <span className="absolute right-0 z-10" onClick={() => increaseSlider()}>
