@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Category from "../components/Category";
 import Features from "../components/Features";
 import Slider from "../components/Slider";
 
@@ -9,8 +10,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Store</title>
       </Head>
-      {/* <Slider /> */}
+      <Slider />
       <Features />
+      <Category />
     </div>
   );
 };
