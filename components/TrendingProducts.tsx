@@ -6,7 +6,7 @@ type Product = {
   price: number;
 };
 
-const products: Product[] = [
+export const products: Product[] = [
   {
     img: "https://images.unsplash.com/photo-1625910513413-c23b8bb81cba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBvbG8lMjBzaGlydHN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
     name: "Allen Solly Tshirt",
