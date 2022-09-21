@@ -17,13 +17,13 @@ const Products = (): React.ReactElement => {
 
         <div className="grid h-full gap-5 sm:col-span-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-3">
           {products.map((x) => (
-            <ProductCard data={x} />
+            <ProductCard key={x.id} data={x} />
           ))}
           {products.map((x) => (
-            <ProductCard data={x} />
+            <ProductCard key={x.id} data={x} />
           ))}
           {products.map((x) => (
-            <ProductCard data={x} />
+            <ProductCard key={x.id} data={x} />
           ))}
         </div>
       </>
