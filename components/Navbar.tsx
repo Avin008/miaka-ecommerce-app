@@ -23,7 +23,9 @@ const Navbar = (): React.ReactElement => {
             </Link>
           </li>
           <li className="cursor-pointer items-center justify-center hover:text-yellow-800 sm:hidden md:flex">
-            PRODUCTS
+            <Link href="/products">
+              <a>PRODUCTS</a>
+            </Link>
           </li>
           <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
             <Search />
