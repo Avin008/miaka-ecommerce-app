@@ -3,6 +3,8 @@ import { useState } from "react";
 type Props = {
   toggle: boolean;
   toggleBtn: () => void;
+  toggleTrue: () => void;
+  toggleFalse: () => void;
 };
 
 const useToggle = (): Props => {
@@ -12,7 +14,15 @@ const useToggle = (): Props => {
     setToggle((prev) => !prev);
   };
 
-  return { toggle, toggleBtn };
+  const toggleTrue = () => {
+    setToggle(true);
+  };
+
+  const toggleFalse = () => {
+    setToggle(false);
+  };
+
+  return { toggle, toggleBtn, toggleTrue, toggleFalse };
 };
 
 export { useToggle };
