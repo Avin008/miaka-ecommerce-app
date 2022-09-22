@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Filter from "../../components/Filter";
-import ProductCard from "../../components/ProductCard";
+import Card from "../../components/Card";
 import { products } from "../../components/TrendingProducts";
 
 const Products = (): React.ReactElement => {
@@ -15,15 +15,15 @@ const Products = (): React.ReactElement => {
           <Filter />
         </span>
 
-        <div className="grid h-full gap-5 sm:col-span-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-3">
+        <div className="grid h-full gap-6 sm:col-span-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-3">
           {products.map((x) => (
-            <ProductCard key={x.id} data={x} />
+            <Card key={x.id} data={x} />
           ))}
           {products.map((x) => (
-            <ProductCard key={x.id} data={x} />
+            <Card key={x.id} data={x} />
           ))}
           {products.map((x) => (
-            <ProductCard key={x.id} data={x} />
+            <Card key={x.id} data={x} />
           ))}
         </div>
       </>
