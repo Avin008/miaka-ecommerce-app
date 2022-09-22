@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useToggle } from "../hooks/useToggle";
-import { BsBagPlus, BsBagDash } from "react-icons/bs";
 
 type Props = {
   data: {
