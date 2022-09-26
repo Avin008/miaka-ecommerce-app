@@ -2,24 +2,40 @@ import Image from "next/image";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useToggle } from "../hooks/useToggle";
 import SelectSize from "./SelectSize";
-
+import { useSelectSize } from "../hooks/useSelectSize";
 type Props = {
   data: {
     img: string;
     name: string;
     price: number;
+    sizes: string[];
   };
 };
 
 const Card = ({ data }: Props): React.ReactElement => {
   const { toggle, toggleBtn } = useToggle();
   const { toggle: addToCart, toggleBtn: toggleCartBtn } = useToggle();
+  const {
+    toggle: SelectSizeMsg,
+    toggleTrue: showSelectSizeMsg,
+    toggleFalse: hideSelectSizeMsg,
+  } = useToggle();
 
   const {
     toggle: sizeBar,
     toggleTrue: displaySizeBar,
     toggleFalse: hideSizeBar,
   } = useToggle();
+
+  const { size, sizeSetter } = useSelectSize();
+
+  const sizeStatus = (size: string | undefined): boolean => {
+    if (size !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <div
@@ -41,7 +57,9 @@ const Card = ({ data }: Props): React.ReactElement => {
           objectFit="cover"
           className="rounded-md"
         />
-        {sizeBar && <SelectSize />}
+        {sizeBar && (
+          <SelectSize data={{ sizes: data.sizes, size, sizeSetter }} />
+        )}
       </div>
       <div className="relative flex flex-col justify-center p-2 leading-5">
         <h1 className="text-sm font-semibold">{data.name}</h1>
@@ -49,17 +67,17 @@ const Card = ({ data }: Props): React.ReactElement => {
         <div className="mt-1 transition-all">
           {addToCart ? (
             <button
+              className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-90 transition-all hover:opacity-90"
+              onClick={toggleCartBtn}
+            >
+              <span className="text-sm">GO TO BAG</span>
+            </button>
+          ) : (
+            <button
               className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-80 transition-all hover:opacity-90"
               onClick={toggleCartBtn}
             >
               <span className="text-sm">ADD TO BAG</span>
-            </button>
-          ) : (
-            <button
-              className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-90 transition-all hover:opacity-90"
-              onClick={toggleCartBtn}
-            >
-              <span className="text-sm">REMOVE FROM BAG</span>
             </button>
           )}
         </div>
