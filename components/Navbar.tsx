@@ -38,7 +38,11 @@ const Navbar = (): React.ReactElement => {
             </Link>
           </li>
           <li className="relative flex cursor-pointer items-center justify-center rounded-full border border-gray-900 p-1 hover:text-yellow-800">
-            <Wishlist />
+            <Link href="/wishlist">
+              <a>
+                <Wishlist />
+              </a>
+            </Link>
           </li>
           <li className="relative flex cursor-pointer items-center justify-center rounded-full border border-gray-900  p-1 hover:text-yellow-800">
             <Cart />
