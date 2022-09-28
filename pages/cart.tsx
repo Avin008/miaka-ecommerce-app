@@ -11,7 +11,7 @@ const Cart = (): React.ReactElement => {
       <div className="grid grid-cols-8 gap-5 px-2">
         <div className="space-y-5 sm:col-span-8 lg:col-span-5">
           {products.slice(1).map((x) => (
-            <CartCard data={x} />
+            <CartCard key={x.id} data={x} />
           ))}
         </div>
         <div className="sm:col-span-8 lg:col-span-3">
