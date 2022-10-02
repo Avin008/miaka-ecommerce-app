@@ -28,6 +28,7 @@ const ProductCard = ({ data }: Props): React.ReactElement => {
           layout="fill"
           objectFit="cover"
           className="rounded-md"
+          alt={data.name}
         />
       </div>
       <div className="relative flex flex-col justify-center p-2 leading-5">

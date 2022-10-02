@@ -45,6 +45,7 @@ const Card = ({ data }: Props): React.ReactElement => {
           layout="fill"
           objectFit="cover"
           className="rounded-md"
+          alt={data.name}
         />
         {sizeBar && (
           <SelectSize

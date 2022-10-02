@@ -9,7 +9,7 @@ export type Sizes = {
   collection: string[];
 };
 
-type Props = {
+export type Props = {
   products: {
     id: number;
     created_at: string;

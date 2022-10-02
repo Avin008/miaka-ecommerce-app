@@ -1,8 +1,9 @@
 import Card from "../components/Card";
-import { products } from "../components/TrendingProducts";
 import EmptyWishlist from "../components/EmptyWishlist";
+import { supabase } from "../utils/supabaseClient";
+import { Props } from "./products";
 
-const WishList = (): React.ReactElement => {
+const WishList = ({ products }: Props): React.ReactElement => {
   return (
     <div className="mx-auto mt-20 w-11/12 space-y-5 px-3">
       <div className="flex flex-wrap items-center justify-between">
@@ -27,3 +28,15 @@ const WishList = (): React.ReactElement => {
 };
 
 export default WishList;
+
+export const getServerSideProps = async () => {
+  let { data: products } = await supabase
+    .from("products")
+    .select("*, sizes(*)");
+
+  return {
+    props: {
+      products,
+    },
+  };
+};
