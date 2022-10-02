@@ -1,9 +1,26 @@
 import Head from "next/head";
 import Filter from "../../components/Filter";
 import Card from "../../components/Card";
-import { products } from "../../components/TrendingProducts";
+import { supabase } from "../../utils/supabaseClient";
 
-const Products = (): React.ReactElement => {
+export type Sizes = {
+  id: number;
+  productId: number;
+  collection: string[];
+};
+
+type Props = {
+  products: {
+    id: number;
+    created_at: string;
+    name: string;
+    img: string;
+    price: number;
+    sizes: Sizes[];
+  }[];
+};
+
+const Products = ({ products }: Props): React.ReactElement => {
   return (
     <div className="mx-auto mt-20 grid h-fit w-11/12 grid-cols-4 gap-10">
       <Head>
@@ -19,12 +36,6 @@ const Products = (): React.ReactElement => {
           {products.map((x) => (
             <Card key={x.id} data={x} />
           ))}
-          {products.map((x) => (
-            <Card key={x.id} data={x} />
-          ))}
-          {products.map((x) => (
-            <Card key={x.id} data={x} />
-          ))}
         </div>
       </>
     </div>
@@ -32,3 +43,15 @@ const Products = (): React.ReactElement => {
 };
 
 export default Products;
+
+export const getServerSideProps = async () => {
+  let { data: products, error } = await supabase
+    .from("products")
+    .select("*, sizes(*)");
+
+  return {
+    props: {
+      products,
+    },
+  };
+};

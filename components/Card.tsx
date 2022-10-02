@@ -3,23 +3,20 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useToggle } from "../hooks/useToggle";
 import SelectSize from "./SelectSize";
 import { useSelectSize } from "../hooks/useSelectSize";
+import { Sizes } from "../pages/products";
+
 type Props = {
   data: {
     img: string;
     name: string;
     price: number;
-    sizes: string[];
+    sizes: Sizes[];
   };
 };
 
 const Card = ({ data }: Props): React.ReactElement => {
   const { toggle, toggleBtn } = useToggle();
   const { toggle: addToCart, toggleBtn: toggleCartBtn } = useToggle();
-  const {
-    toggle: SelectSizeMsg,
-    toggleTrue: showSelectSizeMsg,
-    toggleFalse: hideSelectSizeMsg,
-  } = useToggle();
 
   const {
     toggle: sizeBar,
@@ -28,14 +25,6 @@ const Card = ({ data }: Props): React.ReactElement => {
   } = useToggle();
 
   const { size, sizeSetter } = useSelectSize();
-
-  const sizeStatus = (size: string | undefined): boolean => {
-    if (size !== undefined) {
-      return true;
-    } else {
-      return false;
-    }
-  };
 
   return (
     <div
@@ -58,7 +47,9 @@ const Card = ({ data }: Props): React.ReactElement => {
           className="rounded-md"
         />
         {sizeBar && (
-          <SelectSize data={{ sizes: data.sizes, size, sizeSetter }} />
+          <SelectSize
+            data={{ sizes: data.sizes[0].collection, size, sizeSetter }}
+          />
         )}
       </div>
       <div className="relative flex flex-col justify-center p-2 leading-5">
