@@ -48,7 +48,7 @@ const getSingleDoc = async (collectionName: string, docID: string) => {
   return data;
 };
 
-const logoutFunc = async (): Promise<void> => {
+const signoutFunc = async (): Promise<void> => {
   await signOut(auth);
 };
 
@@ -58,5 +58,5 @@ export {
   initiateUserData,
   getCollectionData,
   getSingleDoc,
-  logoutFunc,
+  signoutFunc,
 };
