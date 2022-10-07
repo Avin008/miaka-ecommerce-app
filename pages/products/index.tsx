@@ -19,12 +19,6 @@ const Products = (): React.ReactElement => {
           {products.map((x) => (
             <Card key={x.id} data={x} />
           ))}
-          {products.map((x) => (
-            <Card key={x.id} data={x} />
-          ))}
-          {products.map((x) => (
-            <Card key={x.id} data={x} />
-          ))}
         </div>
       </>
     </div>
