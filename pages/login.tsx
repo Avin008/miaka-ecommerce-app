@@ -1,13 +1,63 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useAuthStore } from "../lib/store/useAuthStore";
+import { loginFunc } from "../services/firebaseFunc";
+
+type InitialState = {
+  email: string;
+  password: string;
+};
+
+const initialState: InitialState = {
+  email: "",
+  password: "",
+};
 
 const Login = (): React.ReactElement => {
+  const [userData, setUserData] = useState<InitialState>(initialState);
+  const router = useRouter();
+
+  const addAuth = useAuthStore((state: any) => state.addAuth);
+
+  const guestLogin = () => {
+    setUserData((prev) => ({
+      ...prev,
+      email: "johndoe@gmail.com",
+      password: "123456",
+    }));
+  };
+
+  const loginUser = async () => {
+    try {
+      const uid = await loginFunc(userData.email, userData.password);
+      router.push("/");
+      addAuth(uid);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    loginUser();
+  };
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
+    setUserData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className="flex h-screen items-center justify-center">
       <Head>
         <title>Login</title>
       </Head>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="m-auto h-fit w-96 space-y-2 rounded-md border border-gray-300 bg-slate-50 p-6 shadow-md">
           <h1 className="text-2xl font-semibold text-gray-600">Login</h1>
           <div className="space-y-1">
@@ -18,7 +68,10 @@ const Login = (): React.ReactElement => {
                 type="email"
                 placeholder="johndoe@gmail.com"
                 name="email"
-                id=""
+                id="email"
+                required
+                value={userData.email}
+                onChange={handleInput}
               />
             </span>
             <span className="flex flex-col space-y-1">
@@ -28,7 +81,10 @@ const Login = (): React.ReactElement => {
                 type="password"
                 placeholder="**********"
                 name="password"
-                id=""
+                id="password"
+                required
+                value={userData.password}
+                onChange={handleInput}
               />
             </span>
           </div>
@@ -37,7 +93,10 @@ const Login = (): React.ReactElement => {
               <button className="rounded-sm border border-gray-500 p-2 font-semibold">
                 Login
               </button>
-              <button className="rounded-sm bg-yellow-800 p-2 font-semibold text-white">
+              <button
+                className="rounded-sm bg-yellow-800 p-2 font-semibold text-white"
+                onClick={guestLogin}
+              >
                 Login As Guest
               </button>
             </span>
