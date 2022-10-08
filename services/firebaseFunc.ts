@@ -3,7 +3,14 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  DocumentData,
+  getDoc,
+  getDocs,
+  setDoc,
+} from "firebase/firestore";
 import { auth, db } from "./firebaseConfig";
 
 const signupFunc = async (email: string, password: string): Promise<string> => {
@@ -34,7 +41,9 @@ const initiateUserData = async (
   });
 };
 
-const getCollectionData = async (collectionName: string): Promise<any> => {
+const getCollectionData = async (
+  collectionName: string
+): Promise<DocumentData[]> => {
   const collectionRef = collection(db, collectionName);
   const res = await getDocs(collectionRef);
   const data = res.docs.map((x) => x.data());
