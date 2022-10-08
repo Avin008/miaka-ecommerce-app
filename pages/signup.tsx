@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useAuthStore } from "../lib/store/useAuthStore";
-import { signupFunc } from "../services/firebaseFunc";
+import { initiateUserData, signupFunc } from "../services/firebaseFunc";
 
 type InitialState = {
   firstname: string;
@@ -40,6 +40,12 @@ const Signup = () => {
   const signupUser = async (): Promise<void> => {
     try {
       const uid = await signupFunc(userData.email, userData.password);
+      await initiateUserData(
+        uid,
+        userData.email,
+        userData.firstname,
+        userData.lastname
+      );
       addAuth(uid);
       router.push("/");
     } catch (error: any) {
