@@ -1,8 +1,14 @@
 import CartCard from "../components/CartCard";
 import CheckoutCard from "../components/CheckoutCard";
 import { products } from "../components/TrendingProducts";
+import useRequiredAuth from "../hooks/useRequiredAuth";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Cart = (): React.ReactElement => {
+  const { loading } = useRequiredAuth();
+
+  if (loading) return <LoadingSpinner />;
+
   return (
     <div className="mx-auto mt-20 space-y-5 lg:w-5/6">
       {/* <span>

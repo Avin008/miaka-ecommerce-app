@@ -1,8 +1,16 @@
 import Card from "../components/Card";
 import { products } from "../components/TrendingProducts";
 import EmptyWishlist from "../components/EmptyWishlist";
+import useRequiredAuth from "../hooks/useRequiredAuth";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const WishList = (): React.ReactElement => {
+  const { loading } = useRequiredAuth();
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className="mx-auto mt-20 w-11/12 space-y-5 px-3">
       <div className="flex flex-wrap items-center justify-between">
