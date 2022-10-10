@@ -1,11 +1,11 @@
 import CartCard from "../components/CartCard";
 import CheckoutCard from "../components/CheckoutCard";
 import { products } from "../components/TrendingProducts";
-import useRequiredAuth from "../hooks/useRequiredAuth";
 import LoadingSpinner from "../components/LoadingSpinner";
+import useAuthRedirect from "../hooks/useAuthRedirect";
 
 const Cart = (): React.ReactElement => {
-  const { loading } = useRequiredAuth();
+  const { loading } = useAuthRedirect();
 
   if (loading) return <LoadingSpinner />;
 

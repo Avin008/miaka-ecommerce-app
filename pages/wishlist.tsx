@@ -1,11 +1,11 @@
 import Card from "../components/Card";
 import { products } from "../components/TrendingProducts";
 import EmptyWishlist from "../components/EmptyWishlist";
-import useRequiredAuth from "../hooks/useRequiredAuth";
 import LoadingSpinner from "../components/LoadingSpinner";
+import useAuthRedirect from "../hooks/useAuthRedirect";
 
 const WishList = (): React.ReactElement => {
-  const { loading } = useRequiredAuth();
+  const { loading } = useAuthRedirect();
 
   if (loading) {
     return <LoadingSpinner />;

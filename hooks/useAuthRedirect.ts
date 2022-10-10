@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useAuthStore } from "../lib/store/useAuthStore";
 
-const useRequiredAuth = () => {
+const useAuthRedirect = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const authStatus = useAuthStore((state: any) => state.authStatus);
@@ -10,10 +10,9 @@ const useRequiredAuth = () => {
 
   useEffect(() => {
     if (authStatus) {
-      setLoading(false);
       setIsAuth(true);
+      setLoading(false);
     } else {
-      setIsAuth(false);
       router.push("/login");
     }
   }, [authStatus]);
@@ -21,4 +20,4 @@ const useRequiredAuth = () => {
   return { loading, isAuth };
 };
 
-export default useRequiredAuth;
+export default useAuthRedirect;
