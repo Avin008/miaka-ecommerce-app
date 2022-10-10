@@ -2,6 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { ClipLoader } from "react-spinners";
+import LoadingSpinner from "../components/LoadingSpinner";
+import useNoAuthRedirect from "../hooks/useNoAuthRedirect";
 import { useAuthStore } from "../lib/store/useAuthStore";
 import { initiateUserData, signupFunc } from "../services/firebaseFunc";
 
@@ -22,7 +25,10 @@ const initialState: InitialState = {
 const Signup = () => {
   const [userData, setUserData] = useState<InitialState>(initialState);
 
+  const { isAuth, loading } = useNoAuthRedirect();
+
   const addAuth = useAuthStore((state: any) => state.addAuth);
+  const authStatus = useAuthStore((state: any) => state.authStatus);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,6 +58,10 @@ const Signup = () => {
       alert(error.message);
     }
   };
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="flex h-screen items-center justify-center">

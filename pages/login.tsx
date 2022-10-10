@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ClipLoader } from "react-spinners";
+import LoadingSpinner from "../components/LoadingSpinner";
+import useNoAuthRedirect from "../hooks/useNoAuthRedirect";
 import { useAuthStore } from "../lib/store/useAuthStore";
 import { loginFunc } from "../services/firebaseFunc";
 
@@ -51,6 +54,12 @@ const Login = (): React.ReactElement => {
       [name]: value,
     }));
   };
+
+  const { loading } = useNoAuthRedirect();
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="flex h-screen items-center justify-center">
