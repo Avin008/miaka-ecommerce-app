@@ -7,8 +7,6 @@ import TrendingProducts from "../components/TrendingProducts";
 import { getCollectionData } from "../services/firebaseFunc";
 
 const Home: NextPage = ({ category }: any) => {
-  console.log(category);
-
   return (
     <div className="mt-20 space-y-6">
       <Head>

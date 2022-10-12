@@ -1,4 +1,8 @@
 import ProductCard from "./ProductCard";
+import { useQuery } from "@tanstack/react-query";
+import { getCollectionData, getSingleDoc } from "../services/firebaseFunc";
+import LoadingSpinner from "./LoadingSpinner";
+import useAuthStatus from "../hooks/useAuthStatus";
 
 type Product = {
   img: string;
@@ -54,12 +58,35 @@ export const products: Product[] = [
 ];
 
 const TrendingProducts = (): React.ReactElement => {
+  const { authToken, isAuth } = useAuthStatus();
+
+  const { isLoading, data } = useQuery(
+    ["products"],
+    async () => await getCollectionData("products")
+  );
+
+  const {
+    data: userData,
+    isLoading: isUserDataLoading,
+    isError: isUserDataError,
+  } = useQuery(
+    ["users"],
+    async () => {
+      return getSingleDoc("users", authToken!);
+    },
+    {
+      enabled: isAuth,
+    }
+  );
+
+  if (isLoading && isUserDataLoading) return <LoadingSpinner />;
+
   return (
     <div className="mx-auto w-11/12 space-y-5 px-3">
       <h1 className="text-lg font-bold">POPULAR PRODUCTS</h1>
       <div className="grid h-72 justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3">
-        {products.map((x) => (
-          <ProductCard key={x.price} data={x} />
+        {data.map((x) => (
+          <ProductCard key={x.price} data={x} userData={userData} />
         ))}
       </div>
     </div>

@@ -4,12 +4,15 @@ import {
   signOut,
 } from "firebase/auth";
 import {
+  arrayRemove,
+  arrayUnion,
   collection,
   doc,
   DocumentData,
   getDoc,
   getDocs,
   setDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "./firebaseConfig";
 
@@ -61,6 +64,26 @@ const signoutFunc = async (): Promise<void> => {
   await signOut(auth);
 };
 
+const addToWishlist = async (userDocumentId: string, item: any) => {
+  const docRef = doc(db, "users", userDocumentId);
+  await updateDoc(docRef, { wishlist: arrayUnion(item) });
+};
+
+const removeFromWishlist = async (userDocumentID: string, item: any) => {
+  const docRef = doc(db, "users", userDocumentID);
+  await updateDoc(docRef, { wishlist: arrayRemove(item) });
+};
+
+const addToCart = async (userDocumentID: string, item: any) => {
+  const docRef = doc(db, "users", userDocumentID);
+  await updateDoc(docRef, { cart: arrayRemove(item) });
+};
+
+const removeFromCart = async (userDocumentID: string, item: any) => {
+  const docRef = doc(db, "users", userDocumentID);
+  await updateDoc(docRef, { cart: arrayRemove(item) });
+};
+
 export {
   signupFunc,
   loginFunc,
@@ -68,4 +91,8 @@ export {
   getCollectionData,
   getSingleDoc,
   signoutFunc,
+  addToWishlist,
+  removeFromWishlist,
+  addToCart,
+  removeFromCart,
 };
