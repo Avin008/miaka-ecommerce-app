@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Card from "../components/Card";
 import EmptyWishlist from "../components/EmptyWishlist";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -16,6 +17,10 @@ const WishList = (): React.ReactElement => {
 
   return (
     <div className="mx-auto mt-20 w-11/12 space-y-5 px-3">
+      <Head>
+        <title>Wishlist | Miaka</title>
+      </Head>
+
       <div className="flex flex-wrap items-center justify-between">
         <h1 className=" text-lg font-medium">
           My Wishlist ({userData.wishlist.length}){" "}
