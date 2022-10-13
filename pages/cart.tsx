@@ -19,8 +19,12 @@ const Cart = (): React.ReactElement => {
       </span>
       <div className="grid grid-cols-8 gap-5 px-2">
         <div className="space-y-5 sm:col-span-8 lg:col-span-5">
-          {userData.cart.map((x: ProductData) => (
-            <CartCard key={x.id} data={x} />
+          {userData.cart.map((productData: ProductData) => (
+            <CartCard
+              key={productData.id}
+              productData={productData}
+              userData={userData}
+            />
           ))}
         </div>
         <div className="sm:col-span-8 lg:col-span-3">

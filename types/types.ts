@@ -12,7 +12,7 @@ export type UserData = {
   lastname: string;
   email: string;
   wishlist: ProductData[];
-  cart: [];
+  cart: ProductData[];
   address: {};
 };
 
@@ -24,4 +24,9 @@ export type ProductCardProps = {
 export type isProductInWishlist = {
   userData: UserData | undefined;
   productData: ProductData;
+};
+
+export type CartCardProps = {
+  productData: ProductData;
+  userData?: UserData | undefined;
 };

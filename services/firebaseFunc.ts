@@ -76,7 +76,7 @@ const removeFromWishlist = async (userDocumentID: string, item: any) => {
 
 const addToCart = async (userDocumentID: string, item: any) => {
   const docRef = doc(db, "users", userDocumentID);
-  await updateDoc(docRef, { cart: arrayRemove(item) });
+  await updateDoc(docRef, { cart: arrayUnion(item) });
 };
 
 const removeFromCart = async (userDocumentID: string, item: any) => {

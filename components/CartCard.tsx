@@ -5,28 +5,26 @@ import {
   MdKeyboardArrowUp,
   MdKeyboardArrowDown,
 } from "react-icons/md";
+import useRemoveFromCart from "../hooks/useRemoveFromCart";
+import { CartCardProps } from "../types/types";
 
-type Props = {
-  data: {
-    img: string;
-    price: number;
-    name: string;
-  };
-};
-
-const CartCard = ({ data }: Props): React.ReactElement => {
+const CartCard = ({
+  productData,
+  userData,
+}: CartCardProps): React.ReactElement => {
   const [itemQty, setItemQty] = useState<number>(1);
+  const { removeFromCartFunc } = useRemoveFromCart(productData);
 
   return (
     <div className="relative grid h-36 w-full grid-cols-6 gap-2 rounded-md border border-gray-600">
       <span className="absolute right-2 top-2 cursor-pointer rounded-full border border-gray-100 p-1 hover:bg-gray-50">
-        <MdClose size={22} />
+        <MdClose size={22} onClick={() => removeFromCartFunc()} />
       </span>
       <div className="col-span-2 p-2">
         <div className="relative h-full w-full">
           <Image
             className="rounded-md"
-            src={data.img}
+            src={productData.img}
             objectFit="cover"
             layout="fill"
             alt=""
@@ -35,7 +33,7 @@ const CartCard = ({ data }: Props): React.ReactElement => {
       </div>
 
       <div className="rounded-r-m flex items-center text-sm font-medium">
-        {data.name}
+        {productData.name}
       </div>
       <div className="flex select-none items-center justify-center gap-2">
         <span
@@ -66,7 +64,7 @@ const CartCard = ({ data }: Props): React.ReactElement => {
         Size: {"M"}
       </div>
       <div className="rounded-r-m font-sm col-span-1 flex items-center text-sm font-medium text-gray-700">
-        Rs.{data.price}
+        Rs.{productData.price}
       </div>
     </div>
   );

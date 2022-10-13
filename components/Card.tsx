@@ -9,6 +9,8 @@ import useAuthStatus from "../hooks/useAuthStatus";
 import isProductInWishlist from "../utility/isProductInWishlist";
 import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
 import { useRouter } from "next/router";
+import useAddToCart from "../hooks/useAddToCart";
+import isProductInCart from "../utility/isProductInCart";
 type Props = {
   productData: ProductData;
   userData?: UserData;
@@ -37,6 +39,8 @@ const Card = ({ productData, userData }: Props): React.ReactElement => {
     productData,
     userData?.id
   );
+
+  const { addToCartFunc } = useAddToCart(productData);
 
   const router = useRouter();
 
@@ -78,17 +82,21 @@ const Card = ({ productData, userData }: Props): React.ReactElement => {
         <h1 className="text-sm font-semibold">{productData.name}</h1>
         <h3 className="text-[#7F7F7F]">Rs. {productData.price}</h3>
         <div className="mt-1 transition-all">
-          {addToCart ? (
+          {isAuth && isProductInCart(productData, userData) ? (
             <button
               className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-90 transition-all hover:opacity-90"
-              onClick={toggleCartBtn}
+              onClick={() => {
+                isAuth ? router.push("/cart") : router.push("/login");
+              }}
             >
               <span className="text-sm">GO TO BAG</span>
             </button>
           ) : (
             <button
               className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-80 transition-all hover:opacity-90"
-              onClick={toggleCartBtn}
+              onClick={() => {
+                isAuth ? addToCartFunc() : router.push("/login");
+              }}
             >
               <span className="text-sm">ADD TO BAG</span>
             </button>
