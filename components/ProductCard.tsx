@@ -1,15 +1,23 @@
 import Image from "next/image";
 import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import useAuthStatus from "../hooks/useAuthStatus";
 import { ProductCardProps } from "../types/types";
+import isProductInWishlist from "../utility/isProductInWishlist";
 
 const ProductCard = ({
   productData,
   userData,
 }: ProductCardProps): React.ReactElement => {
+  const { isAuth } = useAuthStatus();
+
   return (
     <div className="relative h-fit w-full select-none hover:cursor-pointer">
       <span className="absolute right-5 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:bg-gray-300 hover:text-gray-900">
-        {true ? <MdFavorite size={25} /> : <MdFavoriteBorder size={25} />}
+        {isAuth && isProductInWishlist({ userData, productData }) ? (
+          <MdFavorite size={25} />
+        ) : (
+          <MdFavoriteBorder size={25} />
+        )}
       </span>
       <div className="relative h-40 w-full">
         <Image
