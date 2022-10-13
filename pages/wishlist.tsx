@@ -1,13 +1,16 @@
 import Card from "../components/Card";
-import { products } from "../components/TrendingProducts";
 import EmptyWishlist from "../components/EmptyWishlist";
 import LoadingSpinner from "../components/LoadingSpinner";
 import useAuthRedirect from "../hooks/useAuthRedirect";
+import useGetUserData from "../hooks/useGetUserData";
+import { ProductData } from "../types/types";
 
 const WishList = (): React.ReactElement => {
   const { loading } = useAuthRedirect();
 
-  if (loading) {
+  const { userData, isUserDataLoading } = useGetUserData();
+
+  if (loading || isUserDataLoading) {
     return <LoadingSpinner />;
   }
 
@@ -15,13 +18,13 @@ const WishList = (): React.ReactElement => {
     <div className="mx-auto mt-20 w-11/12 space-y-5 px-3">
       <div className="flex flex-wrap items-center justify-between">
         <h1 className=" text-lg font-medium">
-          My Wishlist ({products.length}){" "}
+          My Wishlist ({userData.wishlist.length}){" "}
         </h1>
       </div>
 
-      {products.length ? (
+      {userData.wishlist.length ? (
         <div className="grid h-72 justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {products.map((x) => (
+          {userData.wishlist.map((x: ProductData) => (
             <Card key={x.price} data={x} />
           ))}
         </div>
