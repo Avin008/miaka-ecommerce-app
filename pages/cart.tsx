@@ -10,7 +10,7 @@ const Cart = (): React.ReactElement => {
 
   const { userData, isUserDataLoading } = useGetUserData();
 
-  if (loading && isUserDataLoading) return <LoadingSpinner />;
+  if (loading || isUserDataLoading) return <LoadingSpinner />;
 
   return (
     <div className="mx-auto mt-20 space-y-5 lg:w-5/6">
