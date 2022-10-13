@@ -1,22 +1,25 @@
 import CartCard from "../components/CartCard";
 import CheckoutCard from "../components/CheckoutCard";
-import { products } from "../components/TrendingProducts";
 import LoadingSpinner from "../components/LoadingSpinner";
 import useAuthRedirect from "../hooks/useAuthRedirect";
+import useGetUserData from "../hooks/useGetUserData";
+import { ProductData } from "../types/types";
 
 const Cart = (): React.ReactElement => {
   const { loading } = useAuthRedirect();
 
-  if (loading) return <LoadingSpinner />;
+  const { userData, isUserDataLoading } = useGetUserData();
+
+  if (loading && isUserDataLoading) return <LoadingSpinner />;
 
   return (
     <div className="mx-auto mt-20 space-y-5 lg:w-5/6">
-      {/* <span>
-        <h1 className="text-lg font-medium">My Cart({products.length})</h1>
-      </span> */}
+      <span>
+        <h1 className="text-lg font-medium">My Cart({userData.cart.length})</h1>
+      </span>
       <div className="grid grid-cols-8 gap-5 px-2">
         <div className="space-y-5 sm:col-span-8 lg:col-span-5">
-          {products.slice(1).map((x) => (
+          {userData.cart.map((x: ProductData) => (
             <CartCard key={x.id} data={x} />
           ))}
         </div>
