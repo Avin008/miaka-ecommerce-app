@@ -1,14 +1,11 @@
-import { DocumentData } from "firebase/firestore";
 import Image from "next/image";
 import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "react-icons/md";
-import { ProductData, UserData } from "../types/types";
+import { ProductCardProps } from "../types/types";
 
-type Props = {
-  productData: ProductData;
-  userData?: UserData | DocumentData | undefined;
-};
-
-const ProductCard = ({ productData, userData }: Props): React.ReactElement => {
+const ProductCard = ({
+  productData,
+  userData,
+}: ProductCardProps): React.ReactElement => {
   return (
     <div className="relative h-fit w-full select-none hover:cursor-pointer">
       <span className="absolute right-5 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:bg-gray-300 hover:text-gray-900">

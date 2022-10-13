@@ -15,3 +15,13 @@ export type UserData = {
   cart: [];
   address: {};
 };
+
+export type ProductCardProps = {
+  productData: ProductData;
+  userData: UserData | undefined;
+};
+
+export type isProductInWishlist = {
+  userData: UserData | undefined;
+  productData: ProductData;
+};
