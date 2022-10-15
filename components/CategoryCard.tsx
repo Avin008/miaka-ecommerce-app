@@ -1,11 +1,23 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { MdArrowRightAlt } from "react-icons/md";
+import { useFilterStore } from "../lib/store/useFilter";
 
 type Props = { data: { id: string; name: string; img: string; route: string } };
 
 const CategoryCard = ({ data }: Props): React.ReactElement => {
+  const router = useRouter();
+  const selectCategory = useFilterStore((state) => state.selectCategory);
+  const clearFilters = useFilterStore((state) => state.clearAllFilters);
+
+  const redirect = () => {
+    router.push("/products");
+    clearFilters();
+    selectCategory(data.name);
+  };
+
   return (
-    <div className="transition-all hover:cursor-pointer">
+    <div className="transition-all hover:cursor-pointer" onClick={redirect}>
       <div className="relative aspect-square">
         <Image
           className="rounded-md"
