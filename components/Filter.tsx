@@ -55,7 +55,7 @@ const Filter = (): React.ReactElement => {
             <span className="border-y border-gray-600 text-sm">
               <ul className="flex flex-col gap-1 px-3">
                 {filterInitialState.categories.map((x) => (
-                  <li className="flex gap-2">
+                  <li key={x} className="flex gap-2">
                     {}
                     <input
                       className="selection:text-gray-900"
@@ -76,7 +76,7 @@ const Filter = (): React.ReactElement => {
             <span className="border-y border-gray-600 text-sm">
               <ul className="flex flex-col gap-1 px-3">
                 {filterInitialState.ratings.map((x) => (
-                  <li className="flex gap-2">
+                  <li key={x} className="flex gap-2">
                     <input
                       type="radio"
                       name="ratings"
@@ -95,7 +95,7 @@ const Filter = (): React.ReactElement => {
             <span className="border-y border-gray-600 text-sm">
               <ul className="flex flex-col gap-1 px-3">
                 {filterInitialState.sortBy.map((x) => (
-                  <li className="flex gap-2">
+                  <li key={x} className="flex gap-2">
                     <input
                       type="radio"
                       name="sort_by"
