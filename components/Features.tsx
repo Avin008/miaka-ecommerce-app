@@ -2,7 +2,7 @@ import {
   MdOutlineLocalShipping,
   MdOutlinePayments,
   MdAssignmentReturn,
-} from "react-icons/md";
+} from "../icons";
 const Features = () => {
   return (
     <div className="mx-auto grid h-fit grid-cols-3 items-center justify-items-center border border-gray-100 bg-[#EBD96B] p-2 text-gray-600 sm:w-full">

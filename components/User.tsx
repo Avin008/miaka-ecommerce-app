@@ -1,5 +1,4 @@
-import { HiOutlineUser } from "react-icons/hi";
-import { MdOutlineLogin } from "react-icons/md";
+import { HiOutlineUser, MdOutlineLogin } from "../icons";
 import { useAuthStore } from "../lib/store/useAuthStore";
 import { ClipLoader } from "react-spinners";
 import Link from "next/link";

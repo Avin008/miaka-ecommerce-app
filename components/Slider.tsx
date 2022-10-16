@@ -1,5 +1,4 @@
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { GoPrimitiveDot } from "react-icons/go";
+import { HiChevronLeft, HiChevronRight, GoPrimitiveDot } from "../icons";
 import Image from "next/image";
 import useSlider from "../hooks/useSlider";
 

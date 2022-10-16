@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "../icons";
 import useAddToWishlist from "../hooks/useAddToWishlist";
 import useAuthStatus from "../hooks/useAuthStatus";
 import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";

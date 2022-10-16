@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { MdArrowRightAlt } from "react-icons/md";
+import { MdArrowRightAlt } from "../icons";
 import { useFilterStore } from "../lib/store/useFilter";
 
 type Props = { data: { id: string; name: string; img: string; route: string } };

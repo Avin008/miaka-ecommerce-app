@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import { MdFavoriteBorder, MdFavorite } from "../icons";
 import { useToggle } from "../hooks/useToggle";
 import SelectSize from "./SelectSize";
 import { useSelectSize } from "../hooks/useSelectSize";
