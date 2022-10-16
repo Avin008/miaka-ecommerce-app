@@ -25,4 +25,4 @@ const useToggle = (): Props => {
   return { toggle, toggleBtn, toggleTrue, toggleFalse };
 };
 
-export { useToggle };
+export default useToggle;

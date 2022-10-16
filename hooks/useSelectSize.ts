@@ -15,4 +15,4 @@ const useSelectSize = () => {
   return { size, sizeSetter };
 };
 
-export { useSelectSize };
+export default useSelectSize;
