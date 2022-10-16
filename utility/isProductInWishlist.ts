@@ -1,9 +1,9 @@
-import { isProductInWishlist } from "../types";
+import { IsProductInWishlist } from "../types";
 
 const isProductInWishlist = ({
   userData,
   productData,
-}: isProductInWishlist): boolean =>
+}: IsProductInWishlist): boolean =>
   userData?.wishlist.find(
     (wishlistProduct) => wishlistProduct.id === productData.id
   )

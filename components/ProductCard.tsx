@@ -5,7 +5,7 @@ import useAddToWishlist from "../hooks/useAddToWishlist";
 import useAuthStatus from "../hooks/useAuthStatus";
 import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
 import { ProductCardProps } from "../types";
-import isProductInWishlist from "../utility/isProductInWishlist";
+import { isProductInWishlist } from "../utility";
 
 const ProductCard = ({
   productData,

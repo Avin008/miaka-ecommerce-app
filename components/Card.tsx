@@ -6,11 +6,10 @@ import { useSelectSize } from "../hooks/useSelectSize";
 import useAddToWishlist from "../hooks/useAddToWishlist";
 import { CardProps } from "../types";
 import useAuthStatus from "../hooks/useAuthStatus";
-import isProductInWishlist from "../utility/isProductInWishlist";
 import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
 import { useRouter } from "next/router";
 import useAddToCart from "../hooks/useAddToCart";
-import isProductInCart from "../utility/isProductInCart";
+import { isProductInWishlist, isProductInCart } from "../utility";
 
 const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   const {

@@ -26,7 +26,7 @@ export type ProductCardProps = {
   userData: UserData | undefined;
 };
 
-export type isProductInWishlist = {
+export type IsProductInWishlist = {
   userData: UserData | undefined;
   productData: ProductData;
 };
