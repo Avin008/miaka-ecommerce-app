@@ -18,7 +18,7 @@ const User = (): React.ReactElement => {
     try {
       await signoutFunc();
       removeAuth();
-      router.push("/");
+      // router.push("/");
     } catch (error) {
       alert(error);
     }

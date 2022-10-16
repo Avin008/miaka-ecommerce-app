@@ -1,4 +1,4 @@
-import { ProductData, UserData } from "../types/types";
+import { ProductData, UserData } from "../types";
 
 const isProductInCart = (
   productData: ProductData,

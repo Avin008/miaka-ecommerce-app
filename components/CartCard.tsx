@@ -6,7 +6,7 @@ import {
   MdKeyboardArrowDown,
 } from "react-icons/md";
 import useRemoveFromCart from "../hooks/useRemoveFromCart";
-import { CartCardProps } from "../types/types";
+import { CartCardProps } from "../types";
 
 const CartCard = ({
   productData,

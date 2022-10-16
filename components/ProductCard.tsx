@@ -4,7 +4,7 @@ import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import useAddToWishlist from "../hooks/useAddToWishlist";
 import useAuthStatus from "../hooks/useAuthStatus";
 import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
-import { ProductCardProps } from "../types/types";
+import { ProductCardProps } from "../types";
 import isProductInWishlist from "../utility/isProductInWishlist";
 
 const ProductCard = ({

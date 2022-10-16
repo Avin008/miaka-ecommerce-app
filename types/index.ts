@@ -16,6 +16,11 @@ export type UserData = {
   address: {};
 };
 
+export type CardProps = {
+  userData?: UserData;
+  productData: ProductData;
+};
+
 export type ProductCardProps = {
   productData: ProductData;
   userData: UserData | undefined;

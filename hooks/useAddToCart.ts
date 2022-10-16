@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addToCart } from "../services/firebaseFunc";
-import { ProductData } from "../types/types";
+import { ProductData } from "../types";
 import useAuthStatus from "./useAuthStatus";
 
 const useAddToCart = (productData: ProductData) => {

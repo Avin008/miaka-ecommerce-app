@@ -1,5 +1,5 @@
 import create from "zustand";
-import { FilterInitialState } from "../../types/types";
+import { FilterInitialState } from "../../types";
 
 export const useFilterStore = create<FilterInitialState>((set) => ({
   category: [],

@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 import LoadingSpinner from "./LoadingSpinner";
 import useGetTrendingProductsData from "../hooks/useGetTrendingProducts";
-import { ProductData } from "../types/types";
+import { ProductData } from "../types";
 import useGetUserData from "../hooks/useGetUserData";
 
 const TrendingProducts = (): React.ReactElement => {

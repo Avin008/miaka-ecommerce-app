@@ -3,7 +3,7 @@ import Filter from "../../components/Filter";
 import Card from "../../components/Card";
 import useGetTrendingProductsData from "../../hooks/useGetTrendingProducts";
 import LoadingSpinner from "../../components/LoadingSpinner";
-import { ProductData } from "../../types/types";
+import { ProductData } from "../../types";
 import useGetUserData from "../../hooks/useGetUserData";
 import { useFilterStore } from "../../lib/store/useFilter";
 

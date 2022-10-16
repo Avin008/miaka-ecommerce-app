@@ -4,7 +4,7 @@ import EmptyWishlist from "../components/EmptyWishlist";
 import LoadingSpinner from "../components/LoadingSpinner";
 import useAuthRedirect from "../hooks/useAuthRedirect";
 import useGetUserData from "../hooks/useGetUserData";
-import { ProductData } from "../types/types";
+import { ProductData } from "../types";
 
 const WishList = (): React.ReactElement => {
   const { loading } = useAuthRedirect();

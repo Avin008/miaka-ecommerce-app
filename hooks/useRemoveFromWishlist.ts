@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { removeFromWishlist } from "../services/firebaseFunc";
-import { ProductData } from "../types/types";
+import { ProductData } from "../types";
 
 const useRemoveFromWishlist = (
   productData: ProductData,

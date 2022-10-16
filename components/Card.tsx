@@ -4,27 +4,15 @@ import { useToggle } from "../hooks/useToggle";
 import SelectSize from "./SelectSize";
 import { useSelectSize } from "../hooks/useSelectSize";
 import useAddToWishlist from "../hooks/useAddToWishlist";
-import { ProductData, UserData } from "../types/types";
+import { CardProps } from "../types";
 import useAuthStatus from "../hooks/useAuthStatus";
 import isProductInWishlist from "../utility/isProductInWishlist";
 import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
 import { useRouter } from "next/router";
 import useAddToCart from "../hooks/useAddToCart";
 import isProductInCart from "../utility/isProductInCart";
-type Props = {
-  productData: ProductData;
-  userData?: UserData;
-};
 
-const Card = ({ productData, userData }: Props): React.ReactElement => {
-  const { toggle, toggleBtn } = useToggle();
-  const { toggle: addToCart, toggleBtn: toggleCartBtn } = useToggle();
-  const {
-    toggle: SelectSizeMsg,
-    toggleTrue: showSelectSizeMsg,
-    toggleFalse: hideSelectSizeMsg,
-  } = useToggle();
-
+const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   const {
     toggle: sizeBar,
     toggleTrue: displaySizeBar,

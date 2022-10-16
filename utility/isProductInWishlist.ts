@@ -1,4 +1,4 @@
-import { isProductInWishlist } from "../types/types";
+import { isProductInWishlist } from "../types";
 
 const isProductInWishlist = ({
   userData,
