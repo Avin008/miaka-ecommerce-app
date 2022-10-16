@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Card from "../components/Card";
-import EmptyWishlist from "../components/EmptyWishlist";
-import LoadingSpinner from "../components/LoadingSpinner";
+import { LoadingSpinner, EmptyWishlist, Card } from "../components";
 import { useAuthRedirect, useGetUserData } from "../hooks";
 import { ProductData } from "../types";
 

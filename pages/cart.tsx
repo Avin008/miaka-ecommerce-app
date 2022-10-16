@@ -1,6 +1,4 @@
-import CartCard from "../components/CartCard";
-import CheckoutCard from "../components/CheckoutCard";
-import LoadingSpinner from "../components/LoadingSpinner";
+import { LoadingSpinner, CheckoutCard, CartCard } from "../components";
 import { useAuthRedirect, useGetUserData } from "../hooks";
 import { ProductData } from "../types";
 

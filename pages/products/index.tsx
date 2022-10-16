@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Filter from "../../components/Filter";
-import Card from "../../components/Card";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { LoadingSpinner, Card, Filter } from "../../components";
 import { ProductData } from "../../types";
 import { useGetUserData, useGetTrendingProductsData } from "../../hooks";
 import { useFilterStore } from "../../lib/store/useFilter";

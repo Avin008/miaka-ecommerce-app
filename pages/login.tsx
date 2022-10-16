@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { ClipLoader } from "react-spinners";
-import LoadingSpinner from "../components/LoadingSpinner";
+import { useState } from "react";
+import { LoadingSpinner } from "../components/";
 import { useNoAuthRedirect } from "../hooks";
 import { useAuthStore } from "../lib/store/useAuthStore";
 import { loginFunc } from "../services/firebaseFunc";
