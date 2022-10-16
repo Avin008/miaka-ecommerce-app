@@ -1,5 +1,4 @@
-import ProductCard from "./ProductCard";
-import LoadingSpinner from "./LoadingSpinner";
+import { ProductCard, LoadingSpinner } from "../components";
 import { ProductData } from "../types";
 import { useGetUserData, useGetTrendingProductsData } from "../hooks";
 

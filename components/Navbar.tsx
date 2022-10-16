@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Cart from "./Cart";
-import User from "./User";
-import Search from "./Search";
-import Wishlist from "./Wishlist";
+import { Cart, User, Search, Wishlist } from "../components";
 
 const Navbar = (): React.ReactElement => {
   return (

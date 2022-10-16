@@ -1,4 +1,4 @@
-import CategoryCard from "./CategoryCard";
+import { CategoryCard } from "../components";
 
 type Props = {
   data: {

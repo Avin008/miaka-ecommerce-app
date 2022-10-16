@@ -1,11 +1,10 @@
 import { HiOutlineUser, MdOutlineLogin } from "../icons";
 import { useAuthStore } from "../lib/store/useAuthStore";
-import { ClipLoader } from "react-spinners";
 import Link from "next/link";
 import { signoutFunc } from "../services/firebaseFunc";
 import { useRouter } from "next/router";
 import { useAuthStatus } from "../hooks";
-
+import { LoadingSpinner } from "../components";
 const User = (): React.ReactElement => {
   const removeAuth = useAuthStore((state: any) => state.removeAuth);
 
@@ -24,7 +23,7 @@ const User = (): React.ReactElement => {
   };
 
   if (loading) {
-    return <ClipLoader size={25} />;
+    return <LoadingSpinner />;
   }
 
   if (isAuth) {
