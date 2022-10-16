@@ -1,8 +1,7 @@
 import CartCard from "../components/CartCard";
 import CheckoutCard from "../components/CheckoutCard";
 import LoadingSpinner from "../components/LoadingSpinner";
-import useAuthRedirect from "../hooks/useAuthRedirect";
-import useGetUserData from "../hooks/useGetUserData";
+import { useAuthRedirect, useGetUserData } from "../hooks";
 import { ProductData } from "../types";
 
 const Cart = (): React.ReactElement => {

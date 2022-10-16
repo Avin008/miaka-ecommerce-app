@@ -1,5 +1,5 @@
 import { HiOutlineHeart } from "../icons";
-import useAuthStatus from "../hooks/useAuthStatus";
+import { useAuthStatus } from "../hooks";
 const Wishlist = (): React.ReactElement => {
   const { isAuth: authStatus } = useAuthStatus();
 

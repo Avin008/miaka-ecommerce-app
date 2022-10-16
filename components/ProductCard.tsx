@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "../icons";
 import useAddToWishlist from "../hooks/useAddToWishlist";
 import useAuthStatus from "../hooks/useAuthStatus";
-import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
+import { useRemoveFromWishlist } from "../hooks/";
 import { ProductCardProps } from "../types";
 import { isProductInWishlist } from "../utility";
 

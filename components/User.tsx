@@ -4,7 +4,7 @@ import { ClipLoader } from "react-spinners";
 import Link from "next/link";
 import { signoutFunc } from "../services/firebaseFunc";
 import { useRouter } from "next/router";
-import useAuthStatus from "../hooks/useAuthStatus";
+import { useAuthStatus } from "../hooks";
 
 const User = (): React.ReactElement => {
   const removeAuth = useAuthStore((state: any) => state.removeAuth);

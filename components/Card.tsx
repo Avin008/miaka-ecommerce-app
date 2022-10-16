@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { MdFavoriteBorder, MdFavorite } from "../icons";
-import { useToggle } from "../hooks/useToggle";
+import {
+  useToggle,
+  useSelectSize,
+  useAddToWishlist,
+  useAuthStatus,
+  useRemoveFromWishlist,
+  useAddToCart,
+} from "../hooks";
 import SelectSize from "./SelectSize";
-import { useSelectSize } from "../hooks/useSelectSize";
-import useAddToWishlist from "../hooks/useAddToWishlist";
 import { CardProps } from "../types";
-import useAuthStatus from "../hooks/useAuthStatus";
-import useRemoveFromWishlist from "../hooks/useRemoveFromWishlist";
 import { useRouter } from "next/router";
-import useAddToCart from "../hooks/useAddToCart";
 import { isProductInWishlist, isProductInCart } from "../utility";
 
 const Card = ({ productData, userData }: CardProps): React.ReactElement => {

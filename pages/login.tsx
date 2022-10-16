@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import LoadingSpinner from "../components/LoadingSpinner";
-import useNoAuthRedirect from "../hooks/useNoAuthRedirect";
+import { useNoAuthRedirect } from "../hooks";
 import { useAuthStore } from "../lib/store/useAuthStore";
 import { loginFunc } from "../services/firebaseFunc";
 

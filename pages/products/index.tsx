@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Filter from "../../components/Filter";
 import Card from "../../components/Card";
-import useGetTrendingProductsData from "../../hooks/useGetTrendingProducts";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { ProductData } from "../../types";
-import useGetUserData from "../../hooks/useGetUserData";
+import { useGetUserData, useGetTrendingProductsData } from "../../hooks";
 import { useFilterStore } from "../../lib/store/useFilter";
 
 const Products = (): React.ReactElement => {

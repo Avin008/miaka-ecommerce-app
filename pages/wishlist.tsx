@@ -2,8 +2,7 @@ import Head from "next/head";
 import Card from "../components/Card";
 import EmptyWishlist from "../components/EmptyWishlist";
 import LoadingSpinner from "../components/LoadingSpinner";
-import useAuthRedirect from "../hooks/useAuthRedirect";
-import useGetUserData from "../hooks/useGetUserData";
+import { useAuthRedirect, useGetUserData } from "../hooks";
 import { ProductData } from "../types";
 
 const WishList = (): React.ReactElement => {
