@@ -1,15 +1,7 @@
 import { CategoryCard } from "../components";
+import { Category } from "../types";
 
-type Props = {
-  data: {
-    id: string;
-    name: string;
-    img: string;
-    route: string;
-  }[];
-};
-
-const Category = ({ data }: Props): React.ReactElement => {
+const Category = ({ data }: Category): React.ReactElement => {
   return (
     <div className="mx-auto w-11/12 space-y-5 p-3">
       <h1 className="text-lg font-bold">CATEGORIES</h1>

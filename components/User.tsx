@@ -5,6 +5,7 @@ import { signoutFunc } from "../services/firebaseFunc";
 import { useRouter } from "next/router";
 import { useAuthStatus } from "../hooks";
 import { LoadingSpinner } from "../components";
+
 const User = (): React.ReactElement => {
   const removeAuth = useAuthStore((state: any) => state.removeAuth);
 

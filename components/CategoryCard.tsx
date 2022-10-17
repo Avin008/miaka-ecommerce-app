@@ -2,13 +2,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { MdArrowRightAlt } from "../icons";
 import { useFilterStore } from "../lib/store/useFilter";
+import { CategoryCardProps } from "../types";
 
-type Props = { data: { id: string; name: string; img: string; route: string } };
-
-const CategoryCard = ({ data }: Props): React.ReactElement => {
-  const router = useRouter();
+const CategoryCard = ({ data }: CategoryCardProps): React.ReactElement => {
   const selectCategory = useFilterStore((state) => state.selectCategory);
   const clearFilters = useFilterStore((state) => state.clearAllFilters);
+
+  const router = useRouter();
 
   const redirect = () => {
     router.push("/products");

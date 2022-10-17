@@ -1,10 +1,7 @@
 import { Navbar } from "../components";
+import { Layout } from "../types";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: Layout) => {
   return (
     <div>
       <Navbar />

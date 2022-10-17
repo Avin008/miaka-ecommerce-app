@@ -16,6 +16,7 @@ import {
   HiChevronRight,
   HiOutlineUser,
   HiOutlineHeart,
+  HiOutlineSearch,
 } from "react-icons/hi";
 
 import { GoPrimitiveDot } from "react-icons/go";
@@ -37,4 +38,5 @@ export {
   HiOutlineUser,
   MdOutlineLogin,
   HiOutlineHeart,
+  HiOutlineSearch,
 };

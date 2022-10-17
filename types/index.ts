@@ -44,6 +44,25 @@ export type SelectSizeProps = {
   };
 };
 
+export type CategoryData = {
+  id: string;
+  name: string;
+  img: string;
+  route: string;
+};
+
+export type Category = {
+  data: CategoryData[];
+};
+
+export type Layout = {
+  children: React.ReactNode;
+};
+
+export type CategoryCardProps = {
+  data: CategoryData;
+};
+
 export type FilterInitialState = {
   category: string[];
   ratings: number;
