@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { MdFavoriteBorder, MdFavorite } from "../icons";
+import { SelectSize } from "../components";
+import { CardProps } from "../types";
+import { useRouter } from "next/router";
+import { isProductInWishlist, isProductInCart } from "../utility";
 import {
   useToggle,
   useSelectSize,
@@ -8,10 +12,6 @@ import {
   useRemoveFromWishlist,
   useAddToCart,
 } from "../hooks";
-import SelectSize from "./SelectSize";
-import { CardProps } from "../types";
-import { useRouter } from "next/router";
-import { isProductInWishlist, isProductInCart } from "../utility";
 
 const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   const {

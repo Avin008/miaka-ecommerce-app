@@ -36,6 +36,14 @@ export type CartCardProps = {
   userData?: UserData | undefined;
 };
 
+export type SelectSizeProps = {
+  data: {
+    sizes: string[];
+    size: string | undefined;
+    sizeSetter: (size: string) => void;
+  };
+};
+
 export type FilterInitialState = {
   category: string[];
   ratings: number;
