@@ -5,7 +5,7 @@ import { useState } from "react";
 import { LoadingSpinner } from "../components/";
 import { useNoAuthRedirect } from "../hooks";
 import { useAuthStore } from "../lib/store";
-import { loginFunc } from "../services/firebaseFunc";
+import { loginFunc } from "../services";
 
 type InitialState = {
   email: string;
