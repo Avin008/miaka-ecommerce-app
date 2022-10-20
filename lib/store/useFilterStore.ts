@@ -1,7 +1,7 @@
 import create from "zustand";
 import { FilterInitialState } from "../../types";
 
-export const useFilterStore = create<FilterInitialState>((set) => ({
+const useFilterStore = create<FilterInitialState>((set) => ({
   category: [],
   ratings: 1,
   sort_by: "Low to High",
@@ -18,3 +18,5 @@ export const useFilterStore = create<FilterInitialState>((set) => ({
   clearAllFilters: () =>
     set({ category: [], ratings: 1, sort_by: "Low to High" }),
 }));
+
+export default useFilterStore;

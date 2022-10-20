@@ -1,7 +1,7 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
 
-export const useAuthStore = create(
+const useAuthStore = create(
   persist(
     (set) => ({
       authStatus: false,
@@ -15,3 +15,5 @@ export const useAuthStore = create(
     }
   )
 );
+
+export default useAuthStore;
