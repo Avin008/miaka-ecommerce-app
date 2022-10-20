@@ -1,17 +1,17 @@
 import Image from "next/image";
-import { MdFavoriteBorder, MdFavorite } from "../icons";
-import { SelectSize } from "../components";
-import { CardProps } from "../types";
 import { useRouter } from "next/router";
-import { isProductInWishlist, isProductInCart } from "../utility";
+import { SelectSize } from "../components";
 import {
-  useToggle,
-  useSelectSize,
+  useAddToCart,
   useAddToWishlist,
   useAuthStatus,
   useRemoveFromWishlist,
-  useAddToCart,
+  useSelectSize,
+  useToggle,
 } from "../hooks";
+import { MdFavorite, MdFavoriteBorder } from "../icons";
+import { CardProps } from "../types";
+import { isProductInCart, isProductInWishlist } from "../utility";
 
 const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   const {

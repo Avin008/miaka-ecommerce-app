@@ -1,6 +1,6 @@
-import { ProductCard, LoadingSpinner } from "../components";
+import { LoadingSpinner, ProductCard } from "../components";
+import { useGetTrendingProductsData, useGetUserData } from "../hooks";
 import { ProductData } from "../types";
-import { useGetUserData, useGetTrendingProductsData } from "../hooks";
 
 const TrendingProducts = (): React.ReactElement => {
   const { productsData, isProductsDataLoading } = useGetTrendingProductsData();

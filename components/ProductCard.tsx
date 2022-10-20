@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { MdArrowRightAlt, MdFavoriteBorder, MdFavorite } from "../icons";
-import { ProductCardProps } from "../types";
-import { isProductInWishlist } from "../utility";
 import {
   useAddToWishlist,
   useAuthStatus,
   useRemoveFromWishlist,
 } from "../hooks";
+import { MdArrowRightAlt, MdFavorite, MdFavoriteBorder } from "../icons";
+import { ProductCardProps } from "../types";
+import { isProductInWishlist } from "../utility";
 
 const ProductCard = ({
   productData,

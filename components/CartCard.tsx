@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
-import { MdClose, MdKeyboardArrowUp, MdKeyboardArrowDown } from "../icons";
 import { useRemoveFromCart } from "../hooks";
+import { MdClose, MdKeyboardArrowDown, MdKeyboardArrowUp } from "../icons";
 import { CartCardProps } from "../types";
 
 const CartCard = ({

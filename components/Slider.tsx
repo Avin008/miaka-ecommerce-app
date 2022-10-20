@@ -1,6 +1,6 @@
-import { HiChevronLeft, HiChevronRight, GoPrimitiveDot } from "../icons";
 import Image from "next/image";
 import { useSlider } from "../hooks";
+import { GoPrimitiveDot, HiChevronLeft, HiChevronRight } from "../icons";
 
 const sliderImg = [
   "https://images.unsplash.com/photo-1545535408-2b4d520cbd88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHNhbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",

@@ -1,10 +1,10 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { LoadingSpinner } from "../components";
+import { useAuthStatus } from "../hooks";
 import { HiOutlineUser, MdOutlineLogin } from "../icons";
 import { useAuthStore } from "../lib/store";
-import Link from "next/link";
 import { signoutFunc } from "../services";
-import { useRouter } from "next/router";
-import { useAuthStatus } from "../hooks";
-import { LoadingSpinner } from "../components";
 
 const User = (): React.ReactElement => {
   const removeAuth = useAuthStore((state: any) => state.removeAuth);

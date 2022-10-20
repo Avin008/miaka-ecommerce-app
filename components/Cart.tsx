@@ -1,5 +1,5 @@
-import { HiOutlineShoppingBag } from "../icons";
 import { useAuthStatus } from "../hooks";
+import { HiOutlineShoppingBag } from "../icons";
 const Cart = (): React.ReactElement => {
   const { isAuth: authStatus } = useAuthStatus();
 

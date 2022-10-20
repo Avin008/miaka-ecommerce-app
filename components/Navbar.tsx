@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Cart, User, Search, Wishlist } from "../components";
+import { Cart, Search, User, Wishlist } from "../components";
 
 const Navbar = (): React.ReactElement => {
   return (

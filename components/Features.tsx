@@ -1,7 +1,7 @@
 import {
+  MdAssignmentReturn,
   MdOutlineLocalShipping,
   MdOutlinePayments,
-  MdAssignmentReturn,
 } from "../icons";
 
 const Features = () => {
