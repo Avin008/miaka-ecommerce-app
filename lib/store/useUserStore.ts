@@ -17,3 +17,5 @@ const useUserStore = create<UserDataExtends>((set) => ({
   addToWishlist: (productData) => set({ wishlist: productData }),
   removeFromWishlist: (productData) => set({ wishlist: productData }),
 }));
+
+export default useUserStore;
