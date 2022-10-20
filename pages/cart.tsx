@@ -1,11 +1,17 @@
 import { LoadingSpinner, CheckoutCard, CartCard } from "../components";
-import { useAuthRedirect, useGetUserData } from "../hooks";
+import {
+  useAuthRedirect,
+  useGetCartAndWishlist,
+  useGetUserData,
+} from "../hooks";
 import { ProductData } from "../types";
 
 const Cart = (): React.ReactElement => {
   const { loading } = useAuthRedirect();
 
   const { userData, isUserDataLoading } = useGetUserData();
+
+  useGetCartAndWishlist(userData, isUserDataLoading);
 
   if (loading || isUserDataLoading) return <LoadingSpinner />;
 
