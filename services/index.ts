@@ -1,14 +1,14 @@
 import {
-  signupFunc,
-  loginFunc,
-  initiateUserData,
+  addToCart,
+  addToWishlist,
   getCollectionData,
   getSingleDoc,
-  signoutFunc,
-  addToWishlist,
-  removeFromWishlist,
-  addToCart,
+  initiateUserData,
+  loginFunc,
   removeFromCart,
+  removeFromWishlist,
+  signoutFunc,
+  signupFunc,
 } from "../services/firebaseFunc";
 
 export {
