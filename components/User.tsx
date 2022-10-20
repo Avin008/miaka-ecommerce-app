@@ -1,5 +1,5 @@
 import { HiOutlineUser, MdOutlineLogin } from "../icons";
-import { useAuthStore } from "../lib/store/useAuthStore";
+import { useAuthStore } from "../lib/store";
 import Link from "next/link";
 import { signoutFunc } from "../services/firebaseFunc";
 import { useRouter } from "next/router";
