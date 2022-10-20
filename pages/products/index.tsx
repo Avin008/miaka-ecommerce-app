@@ -2,7 +2,7 @@ import Head from "next/head";
 import { LoadingSpinner, Card, Filter } from "../../components";
 import { ProductData } from "../../types";
 import { useGetUserData, useGetTrendingProductsData } from "../../hooks";
-import { useFilterStore } from "../../lib/store/useFilter";
+import { useFilterStore } from "../../lib/store";
 
 const Products = (): React.ReactElement => {
   const { productsData, isProductsDataLoading } = useGetTrendingProductsData();

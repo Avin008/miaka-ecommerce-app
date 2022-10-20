@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addToCart } from "../services/firebaseFunc";
+import { addToCart } from "../services/";
 import { ProductData } from "../types";
-import useAuthStatus from "./useAuthStatus";
+import { useAuthStatus } from "../hooks";
 
 const useAddToCart = (productData: ProductData) => {
   const { isAuth, authToken } = useAuthStatus();

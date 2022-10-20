@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addToWishlist } from "../services/firebaseFunc";
+import { addToWishlist } from "../services";
 import { ProductData } from "../types";
 
 const useAddToWishlist = (

@@ -1,7 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { DocumentData } from "firebase/firestore";
-import { getCollectionData } from "../services/firebaseFunc";
-import { ProductData } from "../types";
+import { getCollectionData } from "../services";
 
 const useGetTrendingProductsData = (): {
   productsData: any;

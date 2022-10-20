@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { MdArrowRightAlt } from "../icons";
-import { useFilterStore } from "../lib/store/useFilter";
+import { useFilterStore } from "../lib/store";
 import { CategoryCardProps } from "../types";
 
 const CategoryCard = ({ data }: CategoryCardProps): React.ReactElement => {

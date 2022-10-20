@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { useAuthStore } from "../lib/store/useAuthStore";
+import { useAuthStore } from "../lib/store";
 
 const useAuthRedirect = () => {
   const [loading, setLoading] = useState<boolean>(true);

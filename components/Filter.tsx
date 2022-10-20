@@ -1,4 +1,4 @@
-import { useFilterStore } from "../lib/store/useFilter";
+import { useFilterStore } from "../lib/store";
 
 const filterInitialState = {
   categories: ["Jackets", "Tshirts", "Watches", "Shoes"],
