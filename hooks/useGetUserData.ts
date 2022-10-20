@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getSingleDoc } from "../services";
 import { useAuthStatus } from "../hooks";
+import { getSingleDoc } from "../services";
 
 const useGetUserData = (): {
   userData: any;
