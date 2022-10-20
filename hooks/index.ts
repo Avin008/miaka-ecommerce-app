@@ -2,6 +2,7 @@ import useAddToCart from "./useAddToCart";
 import useAddToWishlist from "./useAddToWishlist";
 import useAuthRedirect from "./useAuthRedirect";
 import useAuthStatus from "./useAuthStatus";
+import useGetCartAndWishlist from "./useGetCartAndWishlistData";
 import useGetTrendingProductsData from "./useGetTrendingProducts";
 import useGetUserData from "./useGetUserData";
 import useNoAuthRedirect from "./useNoAuthRedirect";
@@ -24,4 +25,5 @@ export {
   useSelectSize,
   useSlider,
   useToggle,
+  useGetCartAndWishlist,
 };

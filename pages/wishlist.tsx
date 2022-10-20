@@ -1,12 +1,18 @@
 import Head from "next/head";
 import { LoadingSpinner, EmptyWishlist, Card } from "../components";
-import { useAuthRedirect, useGetUserData } from "../hooks";
+import {
+  useAuthRedirect,
+  useGetCartAndWishlist,
+  useGetUserData,
+} from "../hooks";
 import { ProductData } from "../types";
 
 const WishList = (): React.ReactElement => {
   const { loading } = useAuthRedirect();
 
   const { userData, isUserDataLoading } = useGetUserData();
+
+  useGetCartAndWishlist(userData, isUserDataLoading);
 
   if (loading || isUserDataLoading) {
     return <LoadingSpinner />;

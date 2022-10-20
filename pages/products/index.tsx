@@ -1,7 +1,11 @@
 import Head from "next/head";
 import { LoadingSpinner, Card, Filter } from "../../components";
 import { ProductData } from "../../types";
-import { useGetUserData, useGetTrendingProductsData } from "../../hooks";
+import {
+  useGetUserData,
+  useGetTrendingProductsData,
+  useGetCartAndWishlist,
+} from "../../hooks";
 import { useFilterStore } from "../../lib/store";
 
 const Products = (): React.ReactElement => {
@@ -11,6 +15,8 @@ const Products = (): React.ReactElement => {
   const ratings = useFilterStore((state) => state.ratings);
   const sortBy = useFilterStore((state) => state.sort_by);
   const price = useFilterStore((state) => state.price);
+
+  useGetCartAndWishlist(userData, isUserDataLoading);
 
   if (isProductsDataLoading && isUserDataLoading) return <LoadingSpinner />;
 

@@ -1,10 +1,13 @@
 import { LoadingSpinner, ProductCard } from "../components";
 import { useGetTrendingProductsData, useGetUserData } from "../hooks";
+import { useGetCartAndWishlist } from "../hooks";
 import { ProductData } from "../types";
 
 const TrendingProducts = (): React.ReactElement => {
   const { productsData, isProductsDataLoading } = useGetTrendingProductsData();
   const { userData, isUserDataLoading } = useGetUserData();
+
+  useGetCartAndWishlist(userData, isUserDataLoading);
 
   if (isProductsDataLoading && isUserDataLoading) return <LoadingSpinner />;
 
