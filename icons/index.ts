@@ -1,23 +1,23 @@
 import {
-  MdFavoriteBorder,
-  MdFavorite,
-  MdClose,
-  MdKeyboardArrowUp,
-  MdKeyboardArrowDown,
-  MdArrowRightAlt,
-  MdOutlineLocalShipping,
-  MdOutlinePayments,
-  MdAssignmentReturn,
-  MdOutlineLogin,
-} from "react-icons/md";
-import {
-  HiOutlineShoppingBag,
   HiChevronLeft,
   HiChevronRight,
-  HiOutlineUser,
   HiOutlineHeart,
   HiOutlineSearch,
+  HiOutlineShoppingBag,
+  HiOutlineUser,
 } from "react-icons/hi";
+import {
+  MdArrowRightAlt,
+  MdAssignmentReturn,
+  MdClose,
+  MdFavorite,
+  MdFavoriteBorder,
+  MdKeyboardArrowDown,
+  MdKeyboardArrowUp,
+  MdOutlineLocalShipping,
+  MdOutlineLogin,
+  MdOutlinePayments,
+} from "react-icons/md";
 
 import { GoPrimitiveDot } from "react-icons/go";
 
