@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { LoadingSpinner } from "../components/";
 import { useNoAuthRedirect } from "../hooks";
-import { useAuthStore } from "../lib/store/useAuthStore";
+import { useAuthStore } from "../lib/store";
 import { loginFunc } from "../services/firebaseFunc";
 
 type InitialState = {
