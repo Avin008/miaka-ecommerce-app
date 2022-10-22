@@ -74,14 +74,6 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
           <h3 className="text-sm text-[#7F7F7F] line-through">
             Rs. {productData.price}
           </h3>
-          <h3 className="text-sm text-red-600">
-            (
-            {Math.floor(
-              productData.price -
-                (productData.discountedPrice / productData.price) * 100
-            )}
-            % off )
-          </h3>
         </span>
         <div className="mt-1 transition-all">
           {isAuth && isProductInCart(productData, userData) ? (
