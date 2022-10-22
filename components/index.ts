@@ -4,6 +4,7 @@ import CartCard from "./CartCard";
 import Category from "./Category";
 import CategoryCard from "./CategoryCard";
 import CheckoutCard from "./CheckoutCard";
+import EmptyCart from "./EmptyCart";
 import EmptyWishlist from "./EmptyWishlist";
 import Features from "./Features";
 import Filter from "./Filter";
@@ -38,4 +39,5 @@ export {
   TrendingProducts,
   User,
   Wishlist,
+  EmptyCart,
 };

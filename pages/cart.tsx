@@ -1,4 +1,9 @@
-import { LoadingSpinner, CheckoutCard, CartCard } from "../components";
+import {
+  LoadingSpinner,
+  CheckoutCard,
+  CartCard,
+  EmptyCart,
+} from "../components";
 import {
   useAuthRedirect,
   useGetCartAndWishlist,
@@ -20,20 +25,26 @@ const Cart = (): React.ReactElement => {
       <span>
         <h1 className="text-lg font-medium">My Cart({userData.cart.length})</h1>
       </span>
-      <div className="grid grid-cols-8 gap-5 px-2">
-        <div className="space-y-5 sm:col-span-8 lg:col-span-5">
-          {userData.cart.map((productData: ProductData) => (
-            <CartCard
-              key={productData.id}
-              productData={productData}
-              userData={userData}
-            />
-          ))}
+      {userData.cart.length ? (
+        <div className="grid grid-cols-8 gap-5 px-2">
+          <div className="space-y-5 sm:col-span-8 lg:col-span-5">
+            {userData.cart.map((productData: ProductData) => (
+              <CartCard
+                key={productData.id}
+                productData={productData}
+                userData={userData}
+              />
+            ))}
+          </div>
+          <div className="sm:col-span-8 lg:col-span-3">
+            <CheckoutCard />
+          </div>
         </div>
-        <div className="sm:col-span-8 lg:col-span-3">
-          <CheckoutCard />
+      ) : (
+        <div className="absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center">
+          <EmptyCart />
         </div>
-      </div>
+      )}
     </div>
   );
 };
