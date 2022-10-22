@@ -32,6 +32,7 @@ const Cart = (): React.ReactElement => {
               <CartCard
                 key={cartProductData.id}
                 cartProductData={cartProductData}
+                userData={userData}
               />
             ))}
           </div>

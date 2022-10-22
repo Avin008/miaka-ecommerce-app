@@ -1,10 +1,18 @@
 import Image from "next/image";
 import { useRemoveFromCart } from "../hooks";
+import useDecreaseQty from "../hooks/useDecreaseQty";
+import useIncreaseQty from "../hooks/useIncreaseQty";
 import { MdClose, MdKeyboardArrowDown, MdKeyboardArrowUp } from "../icons";
 import { CartCardProps } from "../types";
 
-const CartCard = ({ cartProductData }: CartCardProps): React.ReactElement => {
+const CartCard = ({
+  cartProductData,
+  userData,
+}: CartCardProps): React.ReactElement => {
   const { removeFromCartFunc } = useRemoveFromCart(cartProductData);
+
+  const { increaseQty } = useIncreaseQty(userData?.cart!, cartProductData.id);
+  const { decreaseQty } = useDecreaseQty(userData?.cart!, cartProductData?.id);
 
   return (
     <div className="relative grid h-36 w-full grid-cols-6 gap-2 rounded-md border border-gray-600">
@@ -28,13 +36,13 @@ const CartCard = ({ cartProductData }: CartCardProps): React.ReactElement => {
       </div>
       <div className="flex select-none items-center justify-center gap-2">
         <span className="cursor-pointer text-lg font-semibold hover:text-gray-700 active:-translate-y-1">
-          <MdKeyboardArrowUp />
+          <MdKeyboardArrowUp onClick={() => increaseQty()} />
         </span>
         <span className="font-base flex h-6 w-6 items-center justify-center border border-gray-300 bg-gray-200 text-base">
           {cartProductData.qty}
         </span>
-        <span className="cursor-pointer text-lg font-semibold active:-translate-y-1">
-          <MdKeyboardArrowDown />
+        <span className="cursor-pointer text-lg font-semibold active:translate-y-1">
+          <MdKeyboardArrowDown onClick={() => decreaseQty()} />
         </span>
       </div>
       <div className="rounded-r-m font-sm flex items-center text-sm font-medium text-gray-700">
