@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const EmptyWishlist = (): React.ReactElement => {
   return (
@@ -13,10 +14,11 @@ const EmptyWishlist = (): React.ReactElement => {
           Tap heart button to start saving your favorite items.
         </p>
       </span>
-
-      <button className="border border-gray-800 px-4 py-1 transition-all hover:bg-gray-200 active:bg-gray-300">
-        Add Now
-      </button>
+      <Link href="/products">
+        <button className="border border-gray-800 px-4 py-1 transition-all hover:bg-gray-200 active:bg-gray-300">
+          Add Now
+        </button>
+      </Link>
     </div>
   );
 };
