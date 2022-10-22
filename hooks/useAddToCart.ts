@@ -3,7 +3,7 @@ import { useAuthStatus } from "../hooks";
 import { addToCart } from "../services";
 import { ProductData } from "../types";
 
-const useAddToCart = (productData: ProductData) => {
+const useAddToCart = (productData: ProductData, size: string | undefined) => {
   const { isAuth, authToken } = useAuthStatus();
 
   const queryClient = useQueryClient();
@@ -14,7 +14,7 @@ const useAddToCart = (productData: ProductData) => {
     isError: isAddToCartError,
   } = useMutation(
     async () => {
-      return addToCart(authToken!, productData);
+      return addToCart(authToken!, { ...productData, qty: 1, size: size });
     },
     {
       onSuccess: () => {

@@ -29,7 +29,7 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
     userData?.id
   );
 
-  const { addToCartFunc } = useAddToCart(productData);
+  const { addToCartFunc } = useAddToCart(productData, size);
 
   const router = useRouter();
 
@@ -69,7 +69,20 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
       </div>
       <div className="relative flex flex-col justify-center p-2 leading-5">
         <h1 className="text-sm font-semibold">{productData.name}</h1>
-        <h3 className="text-[#7F7F7F]">Rs. {productData.price}</h3>
+        <span className="flex items-center gap-2">
+          <h3 className="text-[#7F7F7F]">Rs. {productData.discountedPrice}</h3>
+          <h3 className="text-sm text-[#7F7F7F] line-through">
+            Rs. {productData.price}
+          </h3>
+          <h3 className="text-sm text-red-600">
+            (
+            {Math.floor(
+              productData.price -
+                (productData.discountedPrice / productData.price) * 100
+            )}
+            % off )
+          </h3>
+        </span>
         <div className="mt-1 transition-all">
           {isAuth && isProductInCart(productData, userData) ? (
             <button
