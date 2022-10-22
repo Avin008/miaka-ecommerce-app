@@ -28,11 +28,10 @@ const Cart = (): React.ReactElement => {
       {userData.cart.length ? (
         <div className="grid grid-cols-8 gap-5 px-2">
           <div className="space-y-5 sm:col-span-8 lg:col-span-5">
-            {userData.cart.map((productData: ProductData) => (
+            {userData.cart.map((cartProductData: ProductData) => (
               <CartCard
-                key={productData.id}
-                productData={productData}
-                userData={userData}
+                key={cartProductData.id}
+                cartProductData={cartProductData}
               />
             ))}
           </div>

@@ -3,6 +3,8 @@ export type ProductData = {
   name: string;
   img: string;
   price: number;
+  qty: number;
+  size: string;
   discountedPrice: number;
   sizes: string[];
 };
@@ -33,7 +35,7 @@ export type IsProductInWishlist = {
 };
 
 export type CartCardProps = {
-  productData: ProductData;
+  cartProductData: ProductData;
   userData?: UserData | undefined;
 };
 
