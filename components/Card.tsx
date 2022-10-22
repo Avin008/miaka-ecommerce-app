@@ -84,7 +84,7 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
             <button
               className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-80 transition-all hover:opacity-90"
               onClick={() => {
-                isAuth ? addToCartFunc() : router.push("/login");
+                isAuth ? size && addToCartFunc() : router.push("/login");
               }}
             >
               <span className="text-sm">ADD TO BAG</span>
