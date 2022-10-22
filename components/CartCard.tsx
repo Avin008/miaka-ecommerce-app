@@ -42,7 +42,9 @@ const CartCard = ({
           {cartProductData.qty}
         </span>
         <span className="cursor-pointer text-lg font-semibold active:translate-y-1">
-          <MdKeyboardArrowDown onClick={() => decreaseQty()} />
+          <MdKeyboardArrowDown
+            onClick={() => cartProductData.qty > 1 && decreaseQty()}
+          />
         </span>
       </div>
       <div className="rounded-r-m font-sm flex items-center text-sm font-medium text-gray-700">
