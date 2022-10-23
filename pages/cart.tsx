@@ -37,7 +37,7 @@ const Cart = (): React.ReactElement => {
             ))}
           </div>
           <div className="sm:col-span-8 lg:col-span-3">
-            <CheckoutCard />
+            <CheckoutCard cart={userData.cart} />
           </div>
         </div>
       ) : (

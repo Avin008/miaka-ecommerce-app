@@ -5,7 +5,7 @@ const useFilterStore = create<FilterInitialState>((set) => ({
   category: [],
   ratings: 1,
   sort_by: "Low to High",
-  price: 500,
+  price: 0,
   selectCategory: (categoryName) =>
     set((state) => ({
       category: state.category.includes(categoryName)
