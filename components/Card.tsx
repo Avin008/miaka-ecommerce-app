@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { SelectSize } from "../components";
 import {
   useAddToCart,
@@ -32,6 +33,14 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   const { addToCartFunc } = useAddToCart(productData, size);
 
   const router = useRouter();
+
+  const getSize = userData?.cart.find((x) => x.id === productData.id);
+
+  useEffect(() => {
+    if (isAuth && getSize?.size !== undefined) {
+      sizeSetter(getSize.size);
+    }
+  }, [isAuth]);
 
   return (
     <div
