@@ -11,6 +11,7 @@ import useRemoveFromWishlist from "./useRemoveFromWishlist";
 import useSelectSize from "./useSelectSize";
 import useSlider from "./useSlider";
 import useToggle from "./useToggle";
+import useGetSingleProduct from "./useGetSingleProduct";
 
 export {
   useAddToCart,
@@ -26,4 +27,5 @@ export {
   useSlider,
   useToggle,
   useGetCartAndWishlist,
+  useGetSingleProduct,
 };

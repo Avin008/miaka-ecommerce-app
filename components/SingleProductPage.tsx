@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { MdStar } from "react-icons/md";
-import { useSelectSize } from "../hooks";
+import { useGetSingleProduct, useSelectSize } from "../hooks";
 import SelectSize from "./SelectSize";
 
 const SingleProductPage = () => {
   const { size, sizeSetter } = useSelectSize();
+
+  useGetSingleProduct("EVAUGzZJECNWYxMmGReA");
 
   return (
     <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
