@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getSingleDoc } from "../services";
 
-const useGetSingleProduct = (productID: string | undefined | string[]): any => {
+const useGetSingleProduct = (productID: string): any => {
   const { data, isLoading, isError } = useQuery(
     ["products"],
     async () => {

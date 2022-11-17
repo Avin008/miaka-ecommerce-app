@@ -6,9 +6,9 @@ import { useGetSingleProduct } from "../../hooks";
 const Product = () => {
   const router = useRouter();
 
-  const { data, isLoading, isError } = useGetSingleProduct(
-    router.query.productID
-  );
+  const productID = router.query.productID as string;
+
+  const { data, isLoading, isError } = useGetSingleProduct(productID);
 
   if (isLoading) return <LoadingSpinner />;
 
