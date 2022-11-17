@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { MdStar } from "react-icons/md";
 import { useSelectSize } from "../hooks";
+import SelectSize from "./SelectSize";
 
 const SingleProductPage = () => {
   const { size, sizeSetter } = useSelectSize();
 
   return (
     <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
-      <div className="sticky top-10 h-full w-full rounded-md border border-gray-400 p-1">
+      <div className="h-full w-full rounded-md border border-gray-400 p-1">
         <div className="relative h-full w-full">
           <Image
             src={
@@ -18,7 +19,7 @@ const SingleProductPage = () => {
           />
         </div>
       </div>
-      <div className="space-y-2 border border-gray-300">
+      <div className="space-y-2 rounded-md border border-gray-300">
         <div className="border-b border-gray-400 p-3">
           <h1 className="font-base text-2xl">Men Maroon Printed T-Shirt</h1>
         </div>
@@ -76,10 +77,10 @@ const SingleProductPage = () => {
           </div>
         </div>
         <div className="flex gap-3 p-4">
-          <button className="w-full rounded-md border border-gray-600 bg-gray-600 px-8 py-2 text-gray-50">
+          <button className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50">
             ADD TO BAG
           </button>
-          <button className="w-full rounded-md border border-gray-600 px-3 py-2">
+          <button className="h-10 w-full rounded-md border border-gray-600">
             ADD TO WISHLIST
           </button>
         </div>
