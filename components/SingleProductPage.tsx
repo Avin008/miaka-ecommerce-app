@@ -1,14 +1,13 @@
 import Image from "next/image";
+import { MdStar } from "react-icons/md";
 import { useSelectSize } from "../hooks";
 
 const SingleProductPage = () => {
   const { size, sizeSetter } = useSelectSize();
 
-  console.log(size);
-
   return (
-    <div className="grid h-96 grid-cols-2 gap-5">
-      <div className="h-full w-full rounded-md border border-gray-400 p-1">
+    <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
+      <div className="sticky top-10 h-full w-full rounded-md border border-gray-400 p-1">
         <div className="relative h-full w-full">
           <Image
             src={
@@ -26,13 +25,22 @@ const SingleProductPage = () => {
         <div className="flex items-center gap-5 p-3 font-medium">
           <h2 className="text-2xl">Rs. 319</h2>
           <h3 className="text-1xl">
-            MRP: <span className="line">Rs. 775</span>
+            MRP: <span className="line-through">Rs. 775</span>
           </h3>
           <h4 className="text-2xl text-orange-600">(60% OFF)</h4>
         </div>
+        <div className="flex items-center gap-2 p-2">
+          <span>Ratings:</span>
+          <span className="flex text-orange-600">
+            <MdStar size={20} />
+            <MdStar size={20} />
+            <MdStar size={20} />
+            <MdStar color="gray" size={20} />
+          </span>
+        </div>
         <div className="space-y-2 p-3">
           <h1 className="font-medium">SELECT SIZE</h1>
-          <div className="flex h-10 w-full gap-4">
+          <div className="flex h-10 w-full gap-4 transition-all">
             <div
               onClick={(e) => sizeSetter(e.currentTarget.innerText)}
               className={`relative ${
