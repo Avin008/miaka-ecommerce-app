@@ -1,10 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { getSingleDoc } from "../services";
 
-const useGetSingleProduct = (productID: string) => {
-  const { data, isLoading, isError } = useQuery(["products"], async () => {
-    return await getSingleDoc("products", productID);
-  });
+const useGetSingleProduct = (productID: string | undefined | string[]): any => {
+  const { data, isLoading, isError } = useQuery(
+    ["products"],
+    async () => {
+      return getSingleDoc("products", productID);
+    },
+    {
+      enabled: productID !== undefined,
+    }
+  );
 
   return { data, isLoading, isError };
 };
