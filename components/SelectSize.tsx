@@ -12,7 +12,7 @@ const SelectSize = ({ data }: SelectSizeProps): React.ReactElement => {
             key={x}
             className={`${
               x === data.size && `bg-gray-800 text-white`
-            } flex items-center justify-center rounded-full border border-gray-800 p-4 opacity-90 transition-all`}
+            } flex items-center justify-center rounded-full border border-gray-800 p-4 opacity-90 transition-all hover:cursor-pointer`}
             onClick={(e) => data.sizeSetter(e.currentTarget.innerText)}
           >
             <span className="absolute opacity-90">{x}</span>

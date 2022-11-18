@@ -44,11 +44,11 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
 
   return (
     <div
-      className="relative h-fit w-full select-none hover:cursor-pointer"
+      className="relative h-fit w-full select-none"
       onMouseEnter={() => displaySizeBar()}
       onMouseLeave={() => hideSizeBar()}
     >
-      <span className="absolute right-5 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:bg-gray-300 hover:text-gray-900">
+      <span className="absolute right-4 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:cursor-pointer hover:bg-gray-300 hover:text-gray-900">
         {isAuth && isProductInWishlist({ userData, productData }) ? (
           <MdFavorite
             size={25}
@@ -70,7 +70,8 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
           src={productData.img}
           layout="fill"
           objectFit="cover"
-          className="rounded-md"
+          className="cursor-pointer rounded-md"
+          onClick={() => router.push(`product/${productData.id}`)}
         />
         {sizeBar && (
           <SelectSize data={{ sizes: productData.sizes, size, sizeSetter }} />
