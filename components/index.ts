@@ -14,6 +14,7 @@ import Navbar from "./Navbar";
 import ProductCard from "./ProductCard";
 import Search from "./Search";
 import SelectSize from "./SelectSize";
+import SingleProductCard from "./SingleProductCard";
 import Slider from "./Slider";
 import TrendingProducts from "./TrendingProducts";
 import User from "./User";
@@ -40,4 +41,5 @@ export {
   User,
   Wishlist,
   EmptyCart,
+  SingleProductCard,
 };

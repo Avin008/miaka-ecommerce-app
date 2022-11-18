@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
-import { LoadingSpinner } from "../../components";
-import SingleProductPage from "../../components/SingleProductPage";
-import { useGetSingleProduct } from "../../hooks";
+import { LoadingSpinner, SingleProductCard } from "../../components";
+import { useGetSingleProduct, useGetUserData } from "../../hooks";
 
 const Product = () => {
   const router = useRouter();
@@ -9,12 +8,13 @@ const Product = () => {
   const productID = router.query.productID as string;
 
   const { data, isLoading, isError } = useGetSingleProduct(productID);
+  const { userData } = useGetUserData();
 
   if (isLoading) return <LoadingSpinner />;
 
   return (
     <div className="relative mx-auto mt-20 w-4/5">
-      <SingleProductPage productData={data} />
+      <SingleProductCard productData={data} userData={userData} />
     </div>
   );
 };

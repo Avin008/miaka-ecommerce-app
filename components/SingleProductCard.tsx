@@ -1,10 +1,27 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { MdStar } from "react-icons/md";
-import { useSelectSize } from "../hooks";
-import { ProductData } from "../types";
+import {
+  useAddToCart,
+  useAddToWishlist,
+  useAuthStatus,
+  useSelectSize,
+} from "../hooks";
+import { ProductData, UserData } from "../types";
+import { isProductInCart, isProductInWishlist } from "../utility";
 
-const SingleProductPage = ({ productData }: { productData: ProductData }) => {
+const SingleProductCard = ({
+  productData,
+  userData,
+}: {
+  productData: ProductData;
+  userData: UserData;
+}) => {
   const { size, sizeSetter } = useSelectSize();
+  const { isAuth } = useAuthStatus();
+  const router = useRouter();
+  const { addToCartFunc } = useAddToCart(productData, size);
+  const { addToWishlistFunc } = useAddToWishlist(productData, userData.id);
 
   return (
     <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
@@ -49,16 +66,48 @@ const SingleProductPage = ({ productData }: { productData: ProductData }) => {
           </div>
         </div>
         <div className="flex gap-3 p-4">
-          <button className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50">
-            ADD TO BAG
-          </button>
-          <button className="h-10 w-full rounded-md border border-gray-600">
-            ADD TO WISHLIST
-          </button>
+          {isAuth && isProductInCart(productData, userData) ? (
+            <button
+              className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50 transition-all hover:bg-gray-700"
+              onClick={() =>
+                isAuth ? router.push("/cart") : router.push("/login")
+              }
+            >
+              GO TO BAG
+            </button>
+          ) : (
+            <button
+              className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50 transition-all hover:bg-gray-700"
+              onClick={() =>
+                isAuth ? size && addToCartFunc() : router.push("/login")
+              }
+            >
+              ADD TO BAG
+            </button>
+          )}
+          {isAuth && isProductInWishlist({ userData, productData }) ? (
+            <button
+              className="h-10 w-full rounded-md border border-gray-600"
+              onClick={() =>
+                isAuth ? router.push("/wishlist") : router.push("/login")
+              }
+            >
+              GO TO WISHLIST
+            </button>
+          ) : (
+            <button
+              className="h-10 w-full rounded-md border border-gray-600"
+              onClick={() =>
+                isAuth ? addToWishlistFunc() : router.push("/login")
+              }
+            >
+              ADD TO WISHLIST
+            </button>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleProductPage;
+export default SingleProductCard;
