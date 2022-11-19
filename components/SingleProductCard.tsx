@@ -21,7 +21,7 @@ const SingleProductCard = ({
   const { isAuth } = useAuthStatus();
   const router = useRouter();
   const { addToCartFunc } = useAddToCart(productData, size);
-  const { addToWishlistFunc } = useAddToWishlist(productData, userData.id);
+  const { addToWishlistFunc } = useAddToWishlist(productData, userData?.id);
 
   return (
     <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
