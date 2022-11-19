@@ -11,7 +11,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        ["sans"]: ["Lato", ...defaultTheme.fontFamily.sans],
+        ["sans"]: ["Poppins", ...defaultTheme.fontFamily.sans],
+      },
+      screens: {
+        sm: "300px",
+        md: "550px",
       },
     },
   },
