@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { MdStar } from "react-icons/md";
 import {
   useAddToCart,
@@ -22,6 +23,19 @@ const SingleProductCard = ({
   const router = useRouter();
   const { addToCartFunc } = useAddToCart(productData, size);
   const { addToWishlistFunc } = useAddToWishlist(productData, userData?.id);
+
+  useEffect(() => {
+    if (isAuth) {
+      const data = userData.cart.find(
+        (cartData) => cartData.id === productData.id
+      );
+      if (data?.size) {
+        sizeSetter(data.size);
+      } else {
+        sizeSetter("");
+      }
+    }
+  }, [isAuth]);
 
   return (
     <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
