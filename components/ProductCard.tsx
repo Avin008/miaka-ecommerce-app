@@ -23,11 +23,8 @@ const ProductCard = ({
   const router = useRouter();
 
   return (
-    <div
-      className="relative h-fit w-full select-none hover:cursor-pointer"
-      onClick={() => router.push(`product/${productData.id}`)}
-    >
-      <span className="absolute right-5 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:bg-gray-300 hover:text-gray-900">
+    <div className="relative h-fit w-full select-none">
+      <span className="absolute right-5 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:cursor-pointer hover:bg-gray-300 hover:text-gray-900">
         {isAuth && isProductInWishlist({ userData, productData }) ? (
           <MdFavorite
             size={25}
@@ -44,7 +41,10 @@ const ProductCard = ({
           />
         )}
       </span>
-      <div className="relative h-40 w-full">
+      <div
+        className="relative h-40 w-full hover:cursor-pointer"
+        onClick={() => router.push(`product/${productData.id}`)}
+      >
         <Image
           src={productData.img}
           layout="fill"
