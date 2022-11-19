@@ -1,14 +1,20 @@
 import { useRouter } from "next/router";
 import { LoadingSpinner, SingleProductCard } from "../../components";
-import { useGetSingleProduct, useGetUserData } from "../../hooks";
+import {
+  useGetCartAndWishlist,
+  useGetSingleProduct,
+  useGetUserData,
+} from "../../hooks";
 
 const Product = () => {
   const router = useRouter();
 
   const productID = router.query.productID as string;
 
-  const { data, isLoading, isError } = useGetSingleProduct(productID);
-  const { userData } = useGetUserData();
+  const { data, isLoading } = useGetSingleProduct(productID);
+  const { userData, isUserDataLoading } = useGetUserData();
+
+  useGetCartAndWishlist(userData, isUserDataLoading);
 
   if (isLoading) return <LoadingSpinner />;
 
