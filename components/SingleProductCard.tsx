@@ -41,7 +41,7 @@ const SingleProductCard = ({
     <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
       <div className="h-full w-full rounded-md border border-gray-400 p-1">
         <div className="relative h-full w-full">
-          <Image src={productData.img} layout="fill" alt="" />
+          <Image src={productData.img} layout="fill" alt={productData.name} />
         </div>
       </div>
       <div className="space-y-2 rounded-md border border-gray-300">

@@ -71,6 +71,7 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
           layout="fill"
           objectFit="cover"
           className="cursor-pointer rounded-md"
+          alt={productData.name}
           onClick={() => router.push(`product/${productData.id}`)}
         />
         {sizeBar && (
