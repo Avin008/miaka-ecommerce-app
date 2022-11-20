@@ -69,6 +69,7 @@ const SingleProductCard = ({
           <div className="flex h-10 w-full gap-4 transition-all">
             {productData.sizes.map((sizes) => (
               <div
+                key={sizes}
                 onClick={(e) => sizeSetter(e.currentTarget.innerText)}
                 className={`relative ${
                   size === sizes && "bg-gray-600 text-gray-100"
