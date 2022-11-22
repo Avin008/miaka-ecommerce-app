@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Cart, Search, User, Wishlist } from "../components";
+import SearchBar from "./SearchBar";
 
 const Navbar = (): React.ReactElement => {
   const router = useRouter();
@@ -13,6 +14,8 @@ const Navbar = (): React.ReactElement => {
             <small className="cursor-pointer text-2xl font-bold">Miaka</small>
           </span>
         </Link>
+
+        <SearchBar />
 
         <ul
           className={`sm: fixed bottom-0 flex items-center gap-6 border-2 border-black text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t sm:border-gray-300 sm:bg-[#F5F5F5]  sm:p-3 sm:shadow-sm md:static md:h-full md:border-none md:shadow-none lg:p-0`}
@@ -35,9 +38,9 @@ const Navbar = (): React.ReactElement => {
               <a>PRODUCTS</a>
             </Link>
           </li>
-          <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
+          {/* <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
             <Search />
-          </li>
+          </li> */}
           <li
             className={`flex cursor-pointer items-center justify-center hover:text-yellow-800 ${
               router.pathname === "/login" && "text-yellow-600"
