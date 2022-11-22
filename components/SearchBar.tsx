@@ -9,8 +9,6 @@ const SearchBar = () => {
 
   const router = useRouter();
 
-  const productID = router.query.productID as string;
-
   return (
     <div className="relative">
       <div className="relative flex w-96 items-center rounded-md border border-gray-300 bg-[#F5F5F5]">
@@ -28,7 +26,7 @@ const SearchBar = () => {
             <div
               className="h-10 cursor-pointer border border-gray-400"
               onClick={() => {
-                router.push(`/product/${productID}`);
+                router.push(`/product/${x.id}`);
               }}
             >
               {x.name}
