@@ -39,6 +39,8 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   useEffect(() => {
     if (isAuth && getSize?.size !== undefined) {
       sizeSetter(getSize.size);
+    } else {
+      sizeSetter("");
     }
   }, [isAuth]);
 

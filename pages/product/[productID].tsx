@@ -1,28 +1,12 @@
 import { useRouter } from "next/router";
-import { LoadingSpinner, SingleProductCard } from "../../components";
-import {
-  useGetCartAndWishlist,
-  useGetSingleProduct,
-  useGetUserData,
-} from "../../hooks";
+import ProductContainer from "../../components/ProductContainer";
 
 const Product = () => {
   const router = useRouter();
 
   const productID = router.query.productID as string;
 
-  const { data, isLoading } = useGetSingleProduct(productID);
-  const { userData, isUserDataLoading } = useGetUserData();
-
-  useGetCartAndWishlist(userData, isUserDataLoading);
-
-  if (isLoading) return <LoadingSpinner />;
-
-  return (
-    <div className="relative mx-auto mt-20 w-4/5">
-      <SingleProductCard productData={data} userData={userData} />
-    </div>
-  );
+  return <ProductContainer key={productID} />;
 };
 
 export default Product;

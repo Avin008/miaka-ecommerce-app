@@ -34,6 +34,8 @@ const SingleProductCard = ({
       } else {
         sizeSetter("");
       }
+    } else {
+      sizeSetter("");
     }
   }, [isAuth]);
 
