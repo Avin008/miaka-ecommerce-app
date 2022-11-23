@@ -28,6 +28,7 @@ const SearchBar = () => {
               onClick={() => {
                 router.push(`/product/${x.id}`);
               }}
+              key={x.id}
             >
               {x.name}
             </div>
