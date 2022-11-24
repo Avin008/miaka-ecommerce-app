@@ -6,6 +6,7 @@ import { LoadingSpinner } from "../components";
 import { useNoAuthRedirect } from "../hooks";
 import { useAuthStore } from "../lib/store";
 import { initiateUserData, signupFunc } from "../services";
+import { toast } from "react-hot-toast";
 
 type InitialState = {
   firstname: string;
@@ -53,8 +54,13 @@ const Signup = () => {
       );
       addAuth(uid);
       router.push("/");
+      toast.success("user created successfully!", {
+        position: "bottom-center",
+      });
     } catch (error: any) {
-      alert(error.message);
+      toast.error("something went wrong. please try again!", {
+        position: "bottom-center",
+      });
     }
   };
 
