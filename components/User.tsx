@@ -5,6 +5,7 @@ import { useAuthStatus } from "../hooks";
 import { HiOutlineUser, MdOutlineLogin } from "../icons";
 import { useAuthStore } from "../lib/store";
 import { signoutFunc } from "../services";
+import { toast } from "react-hot-toast";
 
 const User = (): React.ReactElement => {
   const removeAuth = useAuthStore((state: any) => state.removeAuth);
@@ -17,9 +18,11 @@ const User = (): React.ReactElement => {
     try {
       await signoutFunc();
       removeAuth();
-      // router.push("/");
+      toast.success("user successfully logged out!", {
+        position: "bottom-center",
+      });
     } catch (error) {
-      alert(error);
+      toast.error("something went wrong. please try again!");
     }
   };
 
