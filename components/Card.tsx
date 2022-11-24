@@ -13,6 +13,7 @@ import {
 import { MdFavorite, MdFavoriteBorder } from "../icons";
 import { CardProps } from "../types";
 import { isProductInCart, isProductInWishlist } from "../utility";
+import { toast } from "react-hot-toast";
 
 const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   const {
@@ -102,7 +103,14 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
             <button
               className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-80 transition-all hover:opacity-90"
               onClick={() => {
-                isAuth ? size && addToCartFunc() : router.push("/login");
+                isAuth
+                  ? size
+                    ? addToCartFunc()
+                    : toast("please select size!", {
+                        icon: "✋",
+                        position: "bottom-center",
+                      })
+                  : router.push("/login");
               }}
             >
               <span className="text-sm">ADD TO BAG</span>
