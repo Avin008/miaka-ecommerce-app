@@ -10,6 +10,7 @@ import {
 } from "../hooks";
 import { ProductData, UserData } from "../types";
 import { isProductInCart, isProductInWishlist } from "../utility";
+import { toast } from "react-hot-toast";
 
 const SingleProductCard = ({
   productData,
@@ -96,7 +97,14 @@ const SingleProductCard = ({
             <button
               className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50 transition-all hover:bg-gray-700"
               onClick={() =>
-                isAuth ? size && addToCartFunc() : router.push("/login")
+                isAuth
+                  ? size
+                    ? addToCartFunc()
+                    : toast("please select size!", {
+                        position: "bottom-center",
+                        icon: "⚠️",
+                      })
+                  : router.push("/login")
               }
             >
               ADD TO BAG
