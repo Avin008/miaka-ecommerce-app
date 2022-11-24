@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { removeFromWishlist } from "../services";
 import { ProductData } from "../types";
+import { toast } from "react-hot-toast";
 
 const useRemoveFromWishlist = (
   productData: ProductData,
@@ -19,6 +20,9 @@ const useRemoveFromWishlist = (
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["user"]);
+        toast.success("product removed from wishlist!", {
+          position: "bottom-center",
+        });
       },
     }
   );
