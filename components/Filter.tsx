@@ -45,7 +45,7 @@ const Filter = (): React.ReactElement => {
                 max={1200}
                 step={300}
                 value={price}
-                className="h-1 w-11/12 appearance-none bg-gray-300"
+                className="h-1 w-11/12 cursor-pointer appearance-none bg-gray-300"
                 onChange={(e) => selectPrice(parseInt(e.target.value))}
               />
             </span>
@@ -58,7 +58,7 @@ const Filter = (): React.ReactElement => {
                   <li key={x} className="flex gap-2">
                     {}
                     <input
-                      className="selection:text-gray-900"
+                      className="cursor-pointer selection:text-gray-900"
                       type="checkbox"
                       name={x}
                       id={x}
@@ -83,6 +83,7 @@ const Filter = (): React.ReactElement => {
                       id=""
                       onChange={() => selectRatings(x)}
                       checked={ratings === x}
+                      className="cursor-pointer"
                     />
                     {x} star & above
                   </li>
@@ -102,6 +103,7 @@ const Filter = (): React.ReactElement => {
                       id=""
                       checked={sortBy === x}
                       onChange={() => selectSortBy(x)}
+                      className="cursor-pointer"
                     />{" "}
                     {x}
                   </li>
