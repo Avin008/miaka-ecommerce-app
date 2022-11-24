@@ -6,6 +6,7 @@ import { LoadingSpinner } from "../components/";
 import { useNoAuthRedirect } from "../hooks";
 import { useAuthStore } from "../lib/store";
 import { loginFunc } from "../services";
+import { toast } from "react-hot-toast";
 
 type InitialState = {
   email: string;
@@ -36,8 +37,11 @@ const Login = (): React.ReactElement => {
       const uid = await loginFunc(userData.email, userData.password);
       router.push("/");
       addAuth(uid);
+      toast.success("user successfully logged in!", {
+        position: "bottom-center",
+      });
     } catch (error) {
-      alert(error);
+      toast.error("something went wrong. please try again!");
     }
   };
 
