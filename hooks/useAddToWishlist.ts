@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addToWishlist } from "../services";
 import { ProductData } from "../types";
+import { toast } from "react-hot-toast";
 
 const useAddToWishlist = (
   productData: ProductData,
@@ -19,6 +20,9 @@ const useAddToWishlist = (
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["user"]);
+        toast.success("product added to wishlist!", {
+          position: "bottom-center",
+        });
       },
     }
   );
