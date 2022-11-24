@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { LoadingSpinner, SingleProductCard } from "../components";
 import {
+  useAuthStatus,
   useGetCartAndWishlist,
   useGetSingleProduct,
   useGetUserData,
@@ -13,10 +14,12 @@ const ProductContainer = () => {
 
   const { data, isLoading } = useGetSingleProduct(productID);
   const { userData, isUserDataLoading } = useGetUserData();
+  const { isAuth } = useAuthStatus();
 
   useGetCartAndWishlist(userData, isUserDataLoading);
 
   if (isLoading) return <LoadingSpinner />;
+  if (isAuth && isUserDataLoading) return <LoadingSpinner />;
 
   return (
     <div className="relative mx-auto mt-20 w-4/5">
