@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   return (
     <div className="relative">
-      <div className="relative flex w-96 items-center rounded-md border border-gray-300 bg-[#F5F5F5]">
+      <div className="relative flex w-96 items-center rounded-md border border-gray-300 bg-[#F5F5F5] focus-within:border-secondary">
         <input
           type="text"
           placeholder="Search for Products"
