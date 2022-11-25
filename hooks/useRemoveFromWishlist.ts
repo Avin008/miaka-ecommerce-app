@@ -20,9 +20,7 @@ const useRemoveFromWishlist = (
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["user"]);
-        toast.success("product removed from wishlist!", {
-          position: "bottom-center",
-        });
+        toast.success("product removed from wishlist!");
       },
     }
   );

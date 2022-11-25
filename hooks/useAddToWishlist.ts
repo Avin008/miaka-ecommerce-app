@@ -20,9 +20,7 @@ const useAddToWishlist = (
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["user"]);
-        toast.success("product added to wishlist!", {
-          position: "bottom-center",
-        });
+        toast.success("product added to wishlist!");
       },
     }
   );
