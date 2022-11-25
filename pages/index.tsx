@@ -10,7 +10,7 @@ const Home: NextPage = ({ category }: any) => {
         <title>Store</title>
       </Head>
       {/* <Slider /> */}
-      <Features />
+      {/* <Features /> */}
       <Category data={category} />
       <TrendingProducts />
     </div>
