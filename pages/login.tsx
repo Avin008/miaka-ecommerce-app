@@ -106,13 +106,13 @@ const Login = (): React.ReactElement => {
                 Login
               </button>
               <button
-                className="rounded-sm bg-yellow-800 p-2 font-semibold text-white"
+                className="rounded-sm bg-yellow-800 p-2 font-semibold text-white hover:bg-opacity-90 active:opacity-95"
                 onClick={guestLogin}
               >
                 Login As Guest
               </button>
             </span>
-            <span className="flex justify-center pt-2 font-medium">
+            <span className="flex justify-center pt-2 font-medium hover:underline">
               <Link href="/signup">Create New Account</Link>
             </span>
           </div>
