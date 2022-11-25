@@ -11,7 +11,9 @@ const Navbar = (): React.ReactElement => {
       <span className="mx-auto flex w-11/12 items-center justify-between">
         <Link href="/">
           <span className="flex items-center gap-1">
-            <small className="cursor-pointer text-2xl font-bold">Miaka</small>
+            <small className="cursor-pointer text-2xl font-bold text-primary-brand">
+              Miaka
+            </small>
           </span>
         </Link>
 
@@ -22,35 +24,37 @@ const Navbar = (): React.ReactElement => {
         >
           <li
             className={`cursor-pointer items-center ${
-              router.pathname === "/" && "text-yellow-600"
-            } justify-center hover:text-yellow-800 sm:hidden md:flex`}
+              router.pathname === "/" && "font-medium text-primary-brand"
+            } justify-center hover:text-primary-hover sm:hidden md:flex`}
           >
             <Link href="/">
               <a>HOME</a>
             </Link>
           </li>
           <li
-            className={`cursor-pointer items-center justify-center hover:text-yellow-800 sm:hidden md:flex ${
-              router.pathname === "/products" && "text-yellow-600"
+            className={`cursor-pointer items-center justify-center hover:text-primary-hover sm:hidden md:flex ${
+              router.pathname === "/products" &&
+              "font-medium text-primary-brand"
             }`}
           >
             <Link href="/products">
               <a>PRODUCTS</a>
             </Link>
           </li>
-          {/* <li className="flex cursor-pointer items-center justify-center hover:text-yellow-800">
+          {/* <li className="flex cursor-pointer items-center justify-center hover:text-primary-hover">
             <Search />
           </li> */}
           <li
-            className={`flex cursor-pointer items-center justify-center hover:text-yellow-800 ${
-              router.pathname === "/login" && "text-yellow-600"
+            className={`flex cursor-pointer items-center justify-center hover:text-primary-hover ${
+              router.pathname === "/login" && "font-medium text-primary-brand"
             }`}
           >
             <User />
           </li>
           <li
-            className={`relative flex cursor-pointer items-center justify-center rounded-full border border-gray-900 p-1 hover:text-yellow-800 ${
-              router.pathname === "/wishlist" && "text-yellow-600"
+            className={`relative flex cursor-pointer items-center justify-center rounded-full border border-gray-900 p-1 hover:text-primary-hover ${
+              router.pathname === "/wishlist" &&
+              "font-medium text-primary-brand"
             }`}
           >
             <Link href="/wishlist">
@@ -60,8 +64,8 @@ const Navbar = (): React.ReactElement => {
             </Link>
           </li>
           <li
-            className={`relative flex cursor-pointer items-center justify-center rounded-full border border-gray-900  p-1 hover:text-yellow-800 ${
-              router.pathname === "/cart" && "text-yellow-600"
+            className={`relative flex cursor-pointer items-center justify-center rounded-full border border-gray-900  p-1 hover:text-primary-hover ${
+              router.pathname === "/cart" && "font-medium text-primary-brand"
             }`}
           >
             <Link href="/cart">
