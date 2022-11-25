@@ -7,7 +7,7 @@ const Layout = ({ children }: Layout) => {
     <div>
       <Navbar />
       <div className="">{children}</div>
-      <Toaster />
+      <Toaster position="bottom-center" />
     </div>
   );
 };
