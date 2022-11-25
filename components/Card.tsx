@@ -107,7 +107,7 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
                   ? size
                     ? addToCartFunc()
                     : toast("please select size!", {
-                        icon: "✋",
+                        icon: "⚠️",
                         position: "bottom-center",
                       })
                   : router.push("/login");
