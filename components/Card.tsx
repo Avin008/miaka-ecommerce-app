@@ -92,7 +92,7 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
         <div className="mt-1 transition-all">
           {isAuth && isProductInCart(productData, userData) ? (
             <button
-              className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-90 transition-all hover:opacity-90"
+              className="flex w-full items-center justify-center gap-1 rounded-md border border-white bg-gray-900 py-2 px-1 text-white opacity-90 transition-all hover:opacity-95"
               onClick={() => {
                 isAuth ? router.push("/cart") : router.push("/login");
               }}
