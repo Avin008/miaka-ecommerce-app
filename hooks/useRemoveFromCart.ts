@@ -20,9 +20,7 @@ const useRemoveFromCart = (productData: ProductData) => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["user"]);
-        toast.success("product removed from cart!", {
-          position: "bottom-center",
-        });
+        toast.success("product removed from bag!");
       },
     }
   );

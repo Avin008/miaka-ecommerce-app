@@ -20,7 +20,7 @@ const useAddToCart = (productData: ProductData, size: string | undefined) => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["user"]);
-        toast.success("product added to cart!", { position: "bottom-center" });
+        toast.success("product added to bag!");
       },
     }
   );
