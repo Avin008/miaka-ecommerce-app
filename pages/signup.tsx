@@ -133,13 +133,13 @@ const Signup = () => {
           <div className="pt-3">
             <span className="flex flex-col space-y-2">
               <button
-                className="rounded-sm bg-yellow-800 p-2 font-semibold text-white"
+                className="rounded-sm bg-yellow-800 p-2 font-semibold text-white hover:bg-opacity-90 active:bg-opacity-95"
                 onClick={signupUser}
               >
                 Sign Up
               </button>
             </span>
-            <span className="flex justify-center pt-2 font-medium">
+            <span className="flex justify-center pt-2 font-medium transition-all hover:underline">
               <Link href="/login">Already Have an Account</Link>
             </span>
           </div>
