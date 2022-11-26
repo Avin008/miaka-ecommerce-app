@@ -5,6 +5,7 @@ export type ProductData = {
   price: number;
   qty: number;
   size: string;
+  category: string;
   discountedPrice: number;
   sizes: string[];
 };
