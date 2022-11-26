@@ -41,17 +41,23 @@ const SingleProductCard = ({
   }, [isAuth]);
 
   return (
-    <div className="sm:grid-col-1 grid h-96 w-full gap-5 md:grid-cols-2">
+    <div className="sm:grid-col-1 grid w-full gap-5 md:grid-cols-1 lg:grid-cols-2">
       <div className="h-full w-full rounded-md border border-gray-400 p-1">
-        <div className="relative h-full w-full">
-          <Image src={productData.img} layout="fill" alt={productData.name} />
+        <div className="relative w-full sm:h-80 lg:h-full">
+          <Image
+            src={productData.img}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            alt={productData.name}
+          />
         </div>
       </div>
       <div className="space-y-2 rounded-md border border-gray-300">
         <div className="border-b border-gray-400 p-3">
           <h1 className="font-base text-2xl">{productData.name}</h1>
         </div>
-        <div className="flex items-center gap-5 p-3 font-medium">
+        <div className="flex items-center gap-5 p-3 font-medium md:flex-wrap lg:flex-nowrap">
           <h2 className="text-2xl">Rs. {productData.discountedPrice}</h2>
           <h3 className="text-1xl">
             MRP: <span className="line-through">Rs. {productData.price}</span>
@@ -83,7 +89,7 @@ const SingleProductCard = ({
             ))}
           </div>
         </div>
-        <div className="flex gap-3 p-4">
+        <div className="flex gap-3 p-4 md:flex-wrap lg:flex-nowrap">
           {isAuth && isProductInCart(productData, userData) ? (
             <button
               className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50 transition-all hover:bg-gray-700"

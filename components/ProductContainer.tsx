@@ -22,7 +22,7 @@ const ProductContainer = () => {
   if (isAuth && isUserDataLoading) return <LoadingSpinner />;
 
   return (
-    <div className="relative mx-auto mt-20 w-4/5">
+    <div className="relative mx-auto mt-20 sm:w-11/12 md:w-4/5 lg:w-4/5">
       <SingleProductCard productData={data} userData={userData} />
     </div>
   );
