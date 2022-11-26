@@ -10,7 +10,9 @@ const useSearch = (searchKey: string | null) => {
     {
       select: (searchData) => {
         return searchData.filter((product) => {
-          return product.name.toLowerCase().includes(searchKey);
+          return product.name
+            .toLowerCase()
+            .includes(searchKey !== "" && searchKey?.toLowerCase());
         });
       },
     }
