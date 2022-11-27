@@ -124,7 +124,7 @@ const SingleProductCard = ({
           )}
           {isAuth && isProductInWishlist({ userData, productData }) ? (
             <button
-              className="h-10 w-full rounded-md border border-gray-600"
+              className="h-10 w-full rounded-md border border-gray-600  transition-all hover:bg-gray-200 active:bg-gray-300"
               onClick={() =>
                 isAuth ? router.push("/wishlist") : router.push("/login")
               }
@@ -133,7 +133,7 @@ const SingleProductCard = ({
             </button>
           ) : (
             <button
-              className="h-10 w-full rounded-md border border-gray-600"
+              className="h-10 w-full rounded-md border border-gray-600 transition-all hover:bg-gray-200 active:bg-gray-300"
               onClick={() =>
                 isAuth ? addToWishlistFunc() : router.push("/login")
               }

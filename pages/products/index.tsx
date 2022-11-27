@@ -54,7 +54,7 @@ const Products = (): React.ReactElement => {
 
       <>
         <span className="sm:hidden lg:block">
-          <Filter />
+          <Filter productData={productsData} />
         </span>
 
         <div className="grid h-full gap-6 sm:col-span-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-3">

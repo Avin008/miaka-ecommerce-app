@@ -1,12 +1,17 @@
 import { useFilterStore } from "../lib/store";
+import { ProductData } from "../types";
+import removeDuplicateCategories from "../utility/removeDuplicateCategories";
 
 const filterInitialState = {
-  categories: ["Jackets", "Tshirts", "Watches", "Shoes"],
   ratings: [4, 3, 2, 1],
   sortBy: ["High to Low", "Low to High"],
 };
 
-const Filter = (): React.ReactElement => {
+const Filter = ({
+  productData,
+}: {
+  productData: ProductData[];
+}): React.ReactElement => {
   const category = useFilterStore((state) => state.category);
   const selectCategory = useFilterStore((state) => state.selectCategory);
   const ratings = useFilterStore((state) => state.ratings);
@@ -54,7 +59,7 @@ const Filter = (): React.ReactElement => {
             <h1 className="p-2 font-medium">Category</h1>
             <span className="border-y border-gray-600 text-sm">
               <ul className="flex flex-col gap-1 px-3">
-                {filterInitialState.categories.map((x) => (
+                {removeDuplicateCategories(productData).map((x) => (
                   <li key={x} className="flex gap-2">
                     {}
                     <input
