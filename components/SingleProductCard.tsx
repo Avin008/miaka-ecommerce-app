@@ -9,7 +9,11 @@ import {
   useSelectSize,
 } from "../hooks";
 import { ProductData, UserData } from "../types";
-import { isProductInCart, isProductInWishlist } from "../utility";
+import {
+  calculateDiscountPercentage,
+  isProductInCart,
+  isProductInWishlist,
+} from "../utility";
 import { toast } from "react-hot-toast";
 
 const SingleProductCard = ({
@@ -62,7 +66,9 @@ const SingleProductCard = ({
           <h3 className="text-1xl">
             MRP: <span className="line-through">Rs. {productData.price}</span>
           </h3>
-          <h4 className="text-2xl text-orange-600">(60% OFF)</h4>
+          <h4 className="text-2xl text-orange-600">
+            ({calculateDiscountPercentage(productData)}% OFF)
+          </h4>
         </div>
         <div className="flex items-center gap-2 p-2">
           <span>Ratings:</span>
