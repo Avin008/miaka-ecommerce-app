@@ -1,13 +1,25 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Category, TrendingProducts } from "../components";
+import { getCollectionData } from "../services/firebaseFunc";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ category }: any) => {
   return (
-    <div className="flex h-40 flex-col items-center justify-center">
-      <h1 className="text-2xl font-medium">Hello world</h1>
-      <p>This is where the magic happens!</p>
+    <div className="mt-20 space-y-6">
+      <Head>
+        <title>Miaka | online clothing store</title>
+      </Head>
+      <Category data={category} />
+      <TrendingProducts />
     </div>
   );
 };
 
 export default Home;
+
+export const getServerSideProps = async () => {
+  const category = await getCollectionData("category");
+  return {
+    props: { category },
+  };
+};
