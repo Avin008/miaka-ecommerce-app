@@ -31,7 +31,13 @@ const User = (): React.ReactElement => {
   }
 
   if (isAuth) {
-    return <MdOutlineLogin size={25} onClick={signOutUser} />;
+    return (
+      <MdOutlineLogin
+        className="text-rose-600"
+        size={25}
+        onClick={signOutUser}
+      />
+    );
   } else {
     return (
       <Link href="/login">
