@@ -82,12 +82,12 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
         )}
       </div>
       <div className="relative flex flex-col justify-center p-2 leading-5">
-        <h1 className="text-sm font-semibold sm:block md:hidden">
+        <h1 className="text-sm font-semibold sm:block tab:hidden">
           {productData.name.length > 10
             ? `${productData.name.slice(0, 10)}...`
             : productData.name}
         </h1>
-        <h1 className="text-sm font-semibold sm:hidden md:block">
+        <h1 className="text-sm font-semibold sm:hidden tab:block">
           {productData.name}
         </h1>
         <span className="flex items-center gap-2">
