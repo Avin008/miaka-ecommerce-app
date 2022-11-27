@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Cart, Search, User, Wishlist } from "../components";
+import { Cart, User, Wishlist } from "../components";
 import SearchBar from "./SearchBar";
 
 const Navbar = (): React.ReactElement => {
@@ -41,9 +41,6 @@ const Navbar = (): React.ReactElement => {
               <a>PRODUCTS</a>
             </Link>
           </li>
-          {/* <li className="flex cursor-pointer items-center justify-center hover:text-primary-hover">
-            <Search />
-          </li> */}
           <li
             className={`flex cursor-pointer items-center justify-center hover:text-primary-hover ${
               router.pathname === "/login" && "font-medium text-primary-brand"

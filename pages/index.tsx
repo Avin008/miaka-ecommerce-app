@@ -1,6 +1,6 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { NextPage } from "next";
 import Head from "next/head";
-import { Category, Features, Slider, TrendingProducts } from "../components";
+import { Category, TrendingProducts } from "../components";
 import { getCollectionData } from "../services/firebaseFunc";
 
 const Home: NextPage = ({ category }: any) => {
@@ -9,8 +9,6 @@ const Home: NextPage = ({ category }: any) => {
       <Head>
         <title>Miaka | online clothing store</title>
       </Head>
-      {/* <Slider /> */}
-      {/* <Features /> */}
       <Category data={category} />
       <TrendingProducts />
     </div>

@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { MdStar } from "react-icons/md";
+import { MdStar } from "../icons";
 import {
   useAddToCart,
   useAddToWishlist,
   useAuthStatus,
   useSelectSize,
 } from "../hooks";
-import { ProductData, UserData } from "../types";
 import {
   calculateDiscountPercentage,
   isProductInCart,
   isProductInWishlist,
 } from "../utility";
+import { ProductData, UserData } from "../types";
 import { toast } from "react-hot-toast";
 
 const SingleProductCard = ({

@@ -17,6 +17,8 @@ import {
   MdOutlineLocalShipping,
   MdOutlineLogin,
   MdOutlinePayments,
+  MdSearch,
+  MdStar,
 } from "react-icons/md";
 
 import { GoPrimitiveDot } from "react-icons/go";
@@ -39,4 +41,6 @@ export {
   MdOutlineLogin,
   HiOutlineHeart,
   HiOutlineSearch,
+  MdSearch,
+  MdStar,
 };

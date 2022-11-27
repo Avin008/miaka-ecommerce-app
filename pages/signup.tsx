@@ -22,7 +22,7 @@ const initialState: InitialState = {
   password: "",
 };
 
-const Signup = () => {
+const Signup = (): React.ReactElement => {
   const [userData, setUserData] = useState<InitialState>(initialState);
 
   const { isAuth, loading } = useNoAuthRedirect();

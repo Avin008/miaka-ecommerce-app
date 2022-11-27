@@ -48,8 +48,8 @@ const Card = ({ productData, userData }: CardProps): React.ReactElement => {
   return (
     <div
       className="relative h-fit w-full select-none"
-      onMouseEnter={() => displaySizeBar()}
-      onMouseLeave={() => hideSizeBar()}
+      onMouseEnter={displaySizeBar}
+      onMouseLeave={hideSizeBar}
     >
       <span className="absolute right-4 top-3 z-10 rounded-full bg-gray-50 p-1 opacity-70 shadow-lg transition-transform hover:cursor-pointer hover:bg-gray-300 hover:text-gray-900">
         {isAuth && isProductInWishlist({ userData, productData }) ? (

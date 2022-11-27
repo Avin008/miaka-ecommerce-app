@@ -1,7 +1,8 @@
-import { MdSearch } from "react-icons/md";
+import { MdSearch } from "../icons";
 import { useState } from "react";
 import useSearch from "../hooks/useSearch";
 import { useRouter } from "next/router";
+
 const SearchBar = () => {
   const [searchKey, setSearchKey] = useState<null | string>(null);
   const [displaySearchBar, setDisplaySearchBar] = useState<boolean>(false);
