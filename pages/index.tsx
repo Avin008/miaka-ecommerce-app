@@ -7,7 +7,7 @@ const Home: NextPage = ({ category }: any) => {
   return (
     <div className="mt-20 space-y-6">
       <Head>
-        <title>Store</title>
+        <title>Miaka | online clothing store</title>
       </Head>
       {/* <Slider /> */}
       {/* <Features /> */}
