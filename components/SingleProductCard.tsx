@@ -72,13 +72,11 @@ const SingleProductCard = ({
             ({calculateDiscountPercentage(productData)}% OFF)
           </h4>
         </div>
-        <div className="flex items-center gap-2 p-2">
+        <div className="flex items-center gap-2 px-2">
           <span>Ratings:</span>
-          <span className="flex text-orange-600">
-            <MdStar size={20} />
-            <MdStar size={20} />
-            <MdStar size={20} />
-            <MdStar color="gray" size={20} />
+          <span className="flex items-center gap-1 rounded-md border border-gray-400 bg-gray-200 px-2 text-sm font-medium text-secondary">
+            <MdStar className="text-orange-600" size={15} />{" "}
+            {productData.ratings}
           </span>
         </div>
         <div className="space-y-2 p-3">
