@@ -54,7 +54,14 @@ const ProductCard = ({
         />
       </div>
       <div className="relative flex flex-col justify-center p-2 leading-5">
-        <h1 className="text-sm font-semibold">{productData.name}</h1>
+        <h1 className="text-sm font-semibold sm:block md:hidden">
+          {productData.name.length > 10
+            ? `${productData.name.slice(0, 10)}...`
+            : productData.name}
+        </h1>
+        <h1 className="text-sm font-semibold sm:hidden md:block">
+          {productData.name}
+        </h1>
         <h3 className="text-[#7F7F7F]">Rs. {productData.price}</h3>
         <MdArrowRightAlt
           size={20}
