@@ -15,11 +15,14 @@ const CartCard = ({
   const { decreaseQty } = useDecreaseQty(userData?.cart!, cartProductData?.id);
 
   return (
-    <div className="relative grid h-36 w-full grid-cols-6 gap-2 rounded-md border border-gray-600">
-      <span className="absolute right-2 top-2 cursor-pointer rounded-full border border-gray-100 p-1 hover:bg-gray-50">
-        <MdClose size={22} onClick={() => removeFromCartFunc()} />
+    <div
+      className="relative grid h-fit w-full gap-2 rounded-md border border-gray-600 sm:grid-cols-1 sm:px-2
+     sm:pb-2 tab:grid-cols-6 tab:px-1 tab:pb-0"
+    >
+      <span className="absolute right-2 top-2 z-10 cursor-pointer rounded-full border border-gray-100 p-1 hover:bg-gray-600  sm:bg-gray-500 sm:text-gray-100">
+        <MdClose size={17} onClick={() => removeFromCartFunc()} />
       </span>
-      <div className="col-span-2 p-2">
+      <div className="col-span-2 p-2 sm:h-60 tab:h-40">
         <div className="relative h-full w-full">
           <Image
             className="rounded-md"
@@ -30,7 +33,6 @@ const CartCard = ({
           />
         </div>
       </div>
-
       <div className="rounded-r-m flex items-center text-sm font-medium">
         {cartProductData.name}
       </div>

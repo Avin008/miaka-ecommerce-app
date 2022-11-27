@@ -21,7 +21,7 @@ const Cart = (): React.ReactElement => {
   if (loading || isUserDataLoading) return <LoadingSpinner />;
 
   return (
-    <div className="mx-auto mt-20 space-y-5 lg:w-5/6">
+    <div className="mx-auto mt-20 space-y-5 sm:w-11/12 lg:w-5/6">
       <span>
         <h1 className="text-lg font-medium">My Cart({userData.cart.length})</h1>
       </span>
