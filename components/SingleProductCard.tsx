@@ -68,7 +68,7 @@ const SingleProductCard = ({
           <h3 className="text-1xl sm:text-base">
             MRP: <span className="line-through">Rs. {productData.price}</span>
           </h3>
-          <h4 className="text-xl text-orange-600 tab:text-2xl">
+          <h4 className="text-orange-600 sm:text-lg tab:text-2xl">
             ({calculateDiscountPercentage(productData)}% OFF)
           </h4>
         </div>
