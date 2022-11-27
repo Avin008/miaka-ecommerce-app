@@ -16,7 +16,7 @@ const TrendingProducts = (): React.ReactElement => {
       <h1 className="text-base font-bold">POPULAR PRODUCTS</h1>
       <div className="grid h-fit justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-4">
         {productsData
-          ?.slice(0, 4)
+          ?.slice(0, 5)
           .filter((x: ProductData) => x.ratings > 3)
           .map((productData: ProductData) => (
             <ProductCard
