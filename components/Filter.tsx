@@ -38,17 +38,17 @@ const Filter = ({
           <span className="">
             <h1 className="p-2 font-medium">Price</h1>
             <span className="flex justify-between pl-2 text-sm">
-              <span>Rs.500</span> <span>1000</span> <span>1500</span>{" "}
-              <span>Rs.1500</span>
+              <span>Rs.1000</span> <span>2000</span> <span>3000</span>{" "}
+              <span>Rs.4000</span>
             </span>
             <span className="px-2">
               <input
                 type="range"
                 name=""
                 id=""
-                min={300}
-                max={1200}
-                step={300}
+                min={1000}
+                max={4000}
+                step={1000}
                 value={price}
                 className="h-1 w-11/12 cursor-pointer appearance-none bg-gray-300"
                 onChange={(e) => selectPrice(parseInt(e.target.value))}
