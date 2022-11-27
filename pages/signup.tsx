@@ -58,7 +58,7 @@ const Signup = () => {
         position: "bottom-center",
       });
     } catch (error: any) {
-      toast.error("something went wrong. please try again!", {
+      toast.error(error.code, {
         position: "bottom-center",
       });
     }

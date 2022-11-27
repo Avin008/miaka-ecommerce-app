@@ -40,8 +40,8 @@ const Login = (): React.ReactElement => {
       toast.success("user successfully logged in!", {
         position: "bottom-center",
       });
-    } catch (error) {
-      toast.error("something went wrong. please try again!");
+    } catch (errorMsg: any) {
+      toast.error(errorMsg.code);
     }
   };
 
