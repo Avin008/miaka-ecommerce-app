@@ -61,12 +61,14 @@ const SingleProductCard = ({
         <div className="border-b border-gray-400 p-3">
           <h1 className="font-base text-2xl">{productData.name}</h1>
         </div>
-        <div className="flex items-center gap-5 p-3 font-medium md:flex-wrap lg:flex-nowrap">
-          <h2 className="text-2xl">Rs. {productData.discountedPrice}</h2>
-          <h3 className="text-1xl">
+        <div className="flex items-center gap-5 p-3 font-medium">
+          <h2 className="sm:text-lg tab:text-2xl">
+            Rs. {productData.discountedPrice}
+          </h2>
+          <h3 className="text-1xl sm:text-base">
             MRP: <span className="line-through">Rs. {productData.price}</span>
           </h3>
-          <h4 className="text-2xl text-orange-600">
+          <h4 className="text-xl text-orange-600 tab:text-2xl">
             ({calculateDiscountPercentage(productData)}% OFF)
           </h4>
         </div>

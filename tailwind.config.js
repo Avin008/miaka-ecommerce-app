@@ -16,6 +16,7 @@ module.exports = {
       screens: {
         sm: "300px",
         md: "550px",
+        tab: "928px",
       },
       colors: {
         primary: {

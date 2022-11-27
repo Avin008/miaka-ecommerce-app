@@ -20,7 +20,7 @@ const Navbar = (): React.ReactElement => {
         <SearchBar />
 
         <ul
-          className={`sm: fixed bottom-0 flex items-center gap-6 border-2 border-black text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t sm:border-gray-300 sm:bg-[#F5F5F5]  sm:p-3 sm:shadow-sm md:static md:h-full md:border-none md:shadow-none lg:p-0`}
+          className={`sm: fixed bottom-0 flex items-center gap-6 border-2 border-black text-gray-800 sm:right-0 sm:left-0 sm:z-20 sm:justify-evenly sm:border-t sm:border-gray-300 sm:bg-[#F5F5F5]  sm:p-3 sm:shadow-sm tab:static tab:h-full tab:border-none tab:p-0 tab:shadow-none`}
         >
           <li
             className={`cursor-pointer items-center ${

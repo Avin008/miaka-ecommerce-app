@@ -13,7 +13,7 @@ const SearchBar = () => {
   return (
     <div className="relative">
       <div
-        className="relative flex w-96 items-center rounded-md border border-gray-300 bg-[#F5F5F5] focus-within:border-secondary"
+        className="relative flex items-center rounded-md border border-gray-300 bg-[#F5F5F5] focus-within:border-secondary sm:w-64 md:w-96"
         onClick={() => setDisplaySearchBar(true)}
       >
         <input
