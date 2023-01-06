@@ -72,11 +72,19 @@ const CartCard = ({
       <div className="rounded-r-m font-sm flex items-center text-sm font-medium text-gray-700">
         Size: {cartProductData.size}
       </div>
-      <div className="rounded-r-m font-sm col-span-1 flex items-center text-sm font-medium text-gray-700">
-        Rs.
-        {cartProductData.price.toLocaleString(
-          "en-US"
-        )}
+      <div className="rounded-r-m font-sm col-span-1 flex flex-col justify-center text-gray-700">
+        <span className="text-sm text-rose-600 line-through">
+          Rs.
+          {cartProductData.price.toLocaleString(
+            "en-US"
+          )}
+        </span>
+        <span>
+          Rs.
+          {cartProductData.discountedPrice.toLocaleString(
+            "en-US"
+          )}
+        </span>
       </div>
     </div>
   );
