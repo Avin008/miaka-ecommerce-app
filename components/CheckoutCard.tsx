@@ -16,7 +16,10 @@ const CheckoutCard = ({
       <div className="space-y-2 p-2 px-3 font-medium text-gray-700">
         <div className="flex justify-between">
           <span>TOTAL PRICE</span>
-          <span>Rs. {data.price.toLocaleString("en-US")}</span>
+          <span>
+            Rs.{" "}
+            {data.price.toLocaleString("en-US")}
+          </span>
         </div>
         <div className="flex justify-between">
           <span>DISCOUNT PRICE</span>
