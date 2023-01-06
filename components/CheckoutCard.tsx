@@ -22,12 +22,13 @@ const CheckoutCard = ({
           </span>
         </div>
         <div className="flex justify-between">
-          <span>DISCOUNT PRICE</span>
-          <span>Rs. {0}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>COUPON DISCOUNT</span>
-          <span>Rs. {0}</span>
+          <span>DISCOUNTED PRICE</span>
+          <span>
+            Rs.{" "}
+            {data.discountedPrice.toLocaleString(
+              "en-US"
+            )}
+          </span>
         </div>
         <div className="flex justify-between">
           <span>DELIVERY CHARGE</span>
