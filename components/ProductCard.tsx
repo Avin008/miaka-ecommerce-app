@@ -66,6 +66,7 @@ const ProductCard = ({
         <Image
           src={productData.img}
           layout="fill"
+          priority={true}
           objectFit="cover"
           className="rounded-md"
           alt={productData.name}

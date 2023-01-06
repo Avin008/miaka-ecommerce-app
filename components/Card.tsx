@@ -101,6 +101,7 @@ const Card = ({
           objectFit="cover"
           className="cursor-pointer rounded-md"
           alt={productData.name}
+          priority={true}
           onClick={() =>
             router.push(
               `product/${productData.id}`

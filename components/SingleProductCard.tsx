@@ -61,6 +61,7 @@ const SingleProductCard = ({
             objectFit="cover"
             objectPosition="center"
             alt={productData.name}
+            priority={true}
           />
         </div>
       </div>

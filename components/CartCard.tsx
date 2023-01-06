@@ -43,6 +43,7 @@ const CartCard = ({
             src={cartProductData.img}
             objectFit="cover"
             layout="fill"
+            priority={true}
             alt=""
           />
         </div>
