@@ -4,9 +4,8 @@ import useSearch from "../hooks/useSearch";
 import { useRouter } from "next/router";
 
 const SearchBar = () => {
-  const [searchKey, setSearchKey] = useState<
-    null | string
-  >(null);
+  const [searchKey, setSearchKey] =
+    useState<string>("");
   const [displaySearchBar, setDisplaySearchBar] =
     useState<boolean>(false);
 
