@@ -61,10 +61,10 @@ const Filter = ({
             </h1>
             <span className="flex justify-between pl-2 text-sm">
               <span>Rs.1,000</span>{" "}
-              <span className="sm:hidden lg:visible">
+              <span className="sm:hidden lg:block">
                 2,000
               </span>{" "}
-              <span className="sm: lg: visible hidden">
+              <span className="sm:hidden lg:block">
                 3,000
               </span>{" "}
               <span className="">Rs.4,000</span>
