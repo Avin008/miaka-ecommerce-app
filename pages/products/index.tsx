@@ -30,6 +30,10 @@ const Products = (): React.ReactElement => {
     (state) => state.price
   );
 
+  const filterbar = useFilterStore(
+    (store) => store.filterBar
+  );
+
   useGetCartAndWishlist(
     userData,
     isUserDataLoading
@@ -88,7 +92,11 @@ const Products = (): React.ReactElement => {
       </Head>
 
       <>
-        <span className="top-16 sm:fixed sm:left-1 sm:bottom-0 sm:z-20 sm:bg-white lg:static lg:block lg:bg-transparent">
+        <span
+          className={`top-16 ${
+            filterbar ? "sm:fixed" : "sm:hidden"
+          } sm:left-1 sm:bottom-0 sm:z-20 sm:bg-white lg:static lg:block lg:bg-transparent`}
+        >
           <Filter productData={productsData} />
         </span>
 
