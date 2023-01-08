@@ -11,10 +11,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        ["sans"]: ["Poppins", ...defaultTheme.fontFamily.sans],
+        ["sans"]: [
+          "Poppins",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       screens: {
-        sm: "300px",
+        sm: "50px",
         md: "550px",
         tab: "928px",
       },
