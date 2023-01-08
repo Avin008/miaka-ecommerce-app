@@ -73,11 +73,11 @@ export type FilterInitialState = {
   ratings: number;
   sort_by: string;
   price: number;
-  filterBar: boolean;
+  filterbar: boolean;
   selectCategory: (categoryName: string) => void;
   selectRatings: (ratings: number) => void;
   selectSortBy: (sortType: string) => void;
   selectPrice: (price: number) => void;
   clearAllFilters: () => void;
-  toggleFilterBar: () => void;
+  togglefilterbar: () => void;
 };

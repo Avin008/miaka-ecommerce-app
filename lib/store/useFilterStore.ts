@@ -7,7 +7,7 @@ const useFilterStore = create<FilterInitialState>(
     ratings: 1,
     sort_by: "Low to High",
     price: 0,
-    filterBar: false,
+    filterbar: false,
     selectCategory: (categoryName) =>
       set((state) => ({
         category: state.category.includes(
@@ -29,9 +29,9 @@ const useFilterStore = create<FilterInitialState>(
         ratings: 1,
         sort_by: "Low to High",
       }),
-    toggleFilterBar: () =>
+    togglefilterbar: () =>
       set((state) => ({
-        filterBar: state.filterBar,
+        filterbar: !state.filterbar,
       })),
   })
 );

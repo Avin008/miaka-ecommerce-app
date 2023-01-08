@@ -31,7 +31,7 @@ const Products = (): React.ReactElement => {
   );
 
   const filterbar = useFilterStore(
-    (store) => store.filterBar
+    (store) => store.filterbar
   );
 
   useGetCartAndWishlist(

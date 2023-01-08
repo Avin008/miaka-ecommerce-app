@@ -1,25 +1,41 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { MdDehaze } from "react-icons/md";
 import {
   Cart,
   User,
   Wishlist,
 } from "../components";
+import { useFilterStore } from "../lib/store";
 import SearchBar from "./SearchBar";
 
 const Navbar = (): React.ReactElement => {
   const router = useRouter();
 
+  const toggleFilterBar = useFilterStore(
+    (store) => store.togglefilterbar
+  );
+
   return (
     <div className="fixed left-0 top-0 right-0 z-40 flex h-16 border-b border-gray-300 bg-[#F5F5F5] shadow-sm">
       <span className="mx-auto flex w-11/12 items-center justify-between">
-        <Link href="/">
-          <span className="flex items-center gap-1">
-            <small className="cursor-pointer text-2xl font-bold text-primary-brand">
-              Miaka
-            </small>
+        <span className="flex items-center gap-2">
+          {router.asPath === "/products" && (
+            <span
+              className="rounded-md p-1 hover:cursor-pointer hover:bg-gray-200 active:bg-gray-300 sm:block lg:hidden"
+              onClick={toggleFilterBar}
+            >
+              <MdDehaze size={25} />
+            </span>
+          )}
+          <span>
+            <Link href="/">
+              <small className="cursor-pointer text-2xl font-bold text-primary-brand sm:hidden lg:block">
+                Miaka
+              </small>
+            </Link>
           </span>
-        </Link>
+        </span>
 
         <SearchBar />
 
