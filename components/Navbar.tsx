@@ -1,11 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { MdDehaze } from "react-icons/md";
-import {
-  Cart,
-  User,
-  Wishlist,
-} from "../components";
+import { Cart, User, Wishlist } from "../components";
 import { useFilterStore } from "../lib/store";
 import SearchBar from "./SearchBar";
 
@@ -30,7 +26,7 @@ const Navbar = (): React.ReactElement => {
           )}
           <span>
             <Link href="/">
-              <small className="cursor-pointer text-2xl font-bold text-primary-brand sm:hidden lg:block">
+              <small className="cursor-pointer text-2xl font-bold text-primary-brand">
                 Miaka
               </small>
             </Link>
