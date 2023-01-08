@@ -1,7 +1,4 @@
-import {
-  LoadingSpinner,
-  ProductCard,
-} from "../components";
+import { LoadingSpinner, ProductCard } from ".";
 import {
   useGetTrendingProductsData,
   useGetUserData,
@@ -9,7 +6,7 @@ import {
 import { useGetCartAndWishlist } from "../hooks";
 import { ProductData } from "../types";
 
-const TrendingProducts =
+const TrendingSection =
   (): React.ReactElement => {
     const {
       productsData,
@@ -52,4 +49,4 @@ const TrendingProducts =
     );
   };
 
-export default TrendingProducts;
+export default TrendingSection;

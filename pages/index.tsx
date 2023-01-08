@@ -1,16 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Category, TrendingProducts } from "../components";
+import {
+  CategorySection,
+  TrendingSection,
+} from "../components";
 import { getCollectionData } from "../services/firebaseFunc";
 
 const Home: NextPage = ({ category }: any) => {
   return (
     <div className="mt-20 space-y-6">
       <Head>
-        <title>Miaka | online clothing store</title>
+        <title>
+          Miaka | online clothing store
+        </title>
       </Head>
-      <Category data={category} />
-      <TrendingProducts />
+      <CategorySection data={category} />
+      <TrendingSection />
     </div>
   );
 };
@@ -18,7 +23,9 @@ const Home: NextPage = ({ category }: any) => {
 export default Home;
 
 export const getServerSideProps = async () => {
-  const category = await getCollectionData("category");
+  const category = await getCollectionData(
+    "category"
+  );
   return {
     props: { category },
   };
