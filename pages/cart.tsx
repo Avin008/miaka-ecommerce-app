@@ -33,13 +33,13 @@ const Cart = (): React.ReactElement => {
       </Head>
       <span>
         <h1 className="text-lg font-medium">
-          My Cart({userData.cart.length})
+          My Cart({userData?.cart?.length})
         </h1>
       </span>
-      {userData.cart.length ? (
+      {userData?.cart?.length ? (
         <div className="grid grid-cols-8 gap-5 px-2">
           <div className="space-y-5 sm:col-span-8 lg:col-span-5">
-            {userData.cart.map(
+            {userData?.cart?.map(
               (cartProductData: ProductData) => (
                 <CartCard
                   key={cartProductData.id}
