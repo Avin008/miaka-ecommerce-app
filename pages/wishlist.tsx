@@ -41,7 +41,7 @@ const WishList = (): React.ReactElement => {
 
       {userData?.wishlist?.length ? (
         <div className="grid h-72 justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {userData.wishlist.map(
+          {userData?.wishlist?.map(
             (productData: ProductData) => (
               <Card
                 key={productData.id}
