@@ -41,7 +41,7 @@ const Filter = ({
   );
 
   return (
-    <div className="sticky top-20 h-fit w-full space-y-5 rounded-md text-gray-700">
+    <div className="sticky top-20 h-fit space-y-5 rounded-md text-gray-700 sm:w-52 sm:px-2 lg:w-full lg:px-0">
       <div className="">
         <span className="flex items-center justify-between border-b border-black pb-3">
           <h1 className="text-lg font-medium">
@@ -61,9 +61,13 @@ const Filter = ({
             </h1>
             <span className="flex justify-between pl-2 text-sm">
               <span>Rs.1,000</span>{" "}
-              <span>2,000</span>{" "}
-              <span>3,000</span>{" "}
-              <span>Rs.4,000</span>
+              <span className="sm:hidden lg:visible">
+                2,000
+              </span>{" "}
+              <span className="sm: lg: visible hidden">
+                3,000
+              </span>{" "}
+              <span className="">Rs.4,000</span>
             </span>
             <span className="px-2">
               <input

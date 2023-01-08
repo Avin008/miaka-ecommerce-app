@@ -1,5 +1,9 @@
 import Head from "next/head";
-import { LoadingSpinner, Card, Filter } from "../../components";
+import {
+  LoadingSpinner,
+  Card,
+  Filter,
+} from "../../components";
 import { ProductData } from "../../types";
 import {
   useGetUserData,
@@ -9,41 +13,72 @@ import {
 import { useFilterStore } from "../../lib/store";
 
 const Products = (): React.ReactElement => {
-  const { productsData, isProductsDataLoading } = useGetTrendingProductsData();
-  const { userData, isUserDataLoading } = useGetUserData();
-  const category = useFilterStore((state) => state.category);
-  const ratings = useFilterStore((state) => state.ratings);
-  const sortBy = useFilterStore((state) => state.sort_by);
-  const price = useFilterStore((state) => state.price);
+  const { productsData, isProductsDataLoading } =
+    useGetTrendingProductsData();
+  const { userData, isUserDataLoading } =
+    useGetUserData();
+  const category = useFilterStore(
+    (state) => state.category
+  );
+  const ratings = useFilterStore(
+    (state) => state.ratings
+  );
+  const sortBy = useFilterStore(
+    (state) => state.sort_by
+  );
+  const price = useFilterStore(
+    (state) => state.price
+  );
 
-  useGetCartAndWishlist(userData, isUserDataLoading);
+  useGetCartAndWishlist(
+    userData,
+    isUserDataLoading
+  );
 
-  if (isProductsDataLoading && isUserDataLoading) return <LoadingSpinner />;
+  if (isProductsDataLoading && isUserDataLoading)
+    return <LoadingSpinner />;
 
-  const filterProductsByCategory = (productsData: any) => {
+  const filterProductsByCategory = (
+    productsData: any
+  ) => {
     let filter: any = [];
     productsData.forEach((x: any) => {
       if (category.includes(x.category)) {
         filter.push(x);
       }
     });
-    return filter.length > 0 ? filter : productsData;
+    return filter.length > 0
+      ? filter
+      : productsData;
   };
 
-  const filteredProductsByRatings = (productsData: any) => {
-    return productsData.filter((x: any) => x.ratings > ratings);
+  const filteredProductsByRatings = (
+    productsData: any
+  ) => {
+    return productsData.filter(
+      (x: any) => x.ratings > ratings
+    );
   };
 
-  const sortProductsByPrice = (productsData: any) => {
+  const sortProductsByPrice = (
+    productsData: any
+  ) => {
     if (sortBy === "Low to High") {
-      return productsData.sort((a: any, b: any) => a.price - b.price);
+      return productsData.sort(
+        (a: any, b: any) => a.price - b.price
+      );
     } else {
-      return productsData.sort((a: any, b: any) => b.price - a.price);
+      return productsData.sort(
+        (a: any, b: any) => b.price - a.price
+      );
     }
   };
 
   const sortByPrice = (productsData: any) => {
-    return productsData.filter((productData: any) => productData.price > price);
+    return productsData.filter(
+      (productData: any) =>
+        productData.price > price
+    );
   };
 
   return (
@@ -53,14 +88,18 @@ const Products = (): React.ReactElement => {
       </Head>
 
       <>
-        <span className="sm:hidden lg:block">
+        <span className="top-16 sm:fixed sm:left-1 sm:bottom-0 sm:z-20 sm:bg-white lg:static lg:block lg:bg-transparent">
           <Filter productData={productsData} />
         </span>
 
         <div className="grid h-full gap-6 sm:col-span-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-3">
           {sortProductsByPrice(
             sortByPrice(
-              filterProductsByCategory(filteredProductsByRatings(productsData))
+              filterProductsByCategory(
+                filteredProductsByRatings(
+                  productsData
+                )
+              )
             )
           ).map((productData: ProductData) => (
             <Card
