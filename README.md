@@ -14,13 +14,13 @@
 - Clone the project
 
 ```bash
-https://github.com/Avin008/Tribble-A-Social-Media-App
+https://github.com/Avin008/ecommerce-app
 ```
 
 - Go to the project directory
 
 ```bash
-  cd Tribble-A-Social-Media-App
+  cd ecommerce-app
 ```
 
 - Install dependencies
