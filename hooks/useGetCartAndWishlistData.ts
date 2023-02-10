@@ -6,10 +6,14 @@ const useGetCartAndWishlist = (
   userData: UserData,
   userDataLoading: boolean
 ) => {
-  const addToWishlist = useUserStore((store) => store.addToWishlist);
-  const addToCart = useUserStore((store) => store.addToCart);
+  const addToWishlist = useUserStore(
+    (store) => store.addToWishlist
+  );
+  const addToCart = useUserStore(
+    (store) => store.addToCart
+  );
   useEffect(() => {
-    if (!userDataLoading) {
+    if (!userDataLoading && userData) {
       addToWishlist(userData.wishlist);
       addToCart(userData.cart);
     }

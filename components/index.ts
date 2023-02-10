@@ -1,7 +1,7 @@
 import Card from "./Card";
 import Cart from "./Cart";
 import CartCard from "./CartCard";
-import Category from "./Category";
+import CategorySection from "./CategorySection";
 import CategoryCard from "./CategoryCard";
 import CheckoutCard from "./CheckoutCard";
 import EmptyCart from "./EmptyCart";
@@ -16,7 +16,7 @@ import Search from "./Search";
 import SelectSize from "./SelectSize";
 import SingleProductCard from "./SingleProductCard";
 import Slider from "./Slider";
-import TrendingProducts from "./TrendingProducts";
+import TrendingSection from "./TrendingSection";
 import User from "./User";
 import Wishlist from "./Wishlist";
 
@@ -24,7 +24,7 @@ export {
   Card,
   Cart,
   CartCard,
-  Category,
+  CategorySection,
   CategoryCard,
   CheckoutCard,
   EmptyWishlist,
@@ -37,7 +37,7 @@ export {
   Search,
   SelectSize,
   Slider,
-  TrendingProducts,
+  TrendingSection,
   User,
   Wishlist,
   EmptyCart,

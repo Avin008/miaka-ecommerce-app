@@ -26,13 +26,20 @@ const SingleProductCard = ({
   const { size, sizeSetter } = useSelectSize();
   const { isAuth } = useAuthStatus();
   const router = useRouter();
-  const { addToCartFunc } = useAddToCart(productData, size);
-  const { addToWishlistFunc } = useAddToWishlist(productData, userData?.id);
+  const { addToCartFunc } = useAddToCart(
+    productData,
+    size
+  );
+  const { addToWishlistFunc } = useAddToWishlist(
+    productData,
+    userData?.id
+  );
 
   useEffect(() => {
     if (isAuth) {
       const data = userData.cart.find(
-        (cartData) => cartData.id === productData.id
+        (cartData) =>
+          cartData.id === productData.id
       );
       if (data?.size) {
         sizeSetter(data.size);
@@ -54,53 +61,87 @@ const SingleProductCard = ({
             objectFit="cover"
             objectPosition="center"
             alt={productData.name}
+            priority={true}
           />
         </div>
       </div>
       <div className="space-y-2 rounded-md border border-gray-300">
         <div className="border-b border-gray-400 p-3">
-          <h1 className="font-base text-2xl">{productData.name}</h1>
+          <h1 className="font-base text-2xl">
+            {productData.name}
+          </h1>
         </div>
         <div className="flex items-center gap-5 p-3 font-medium">
           <h2 className="sm:text-lg tab:text-2xl">
-            Rs. {productData.discountedPrice}
+            Rs.{" "}
+            {productData.discountedPrice.toLocaleString(
+              "en-US"
+            )}
           </h2>
           <h3 className="text-1xl sm:text-base">
-            MRP: <span className="line-through">Rs. {productData.price}</span>
+            MRP:{" "}
+            <span className="line-through">
+              Rs.{" "}
+              {productData.price.toLocaleString(
+                "en-US"
+              )}
+            </span>
           </h3>
           <h4 className="text-orange-600 sm:text-lg tab:text-2xl">
-            ({calculateDiscountPercentage(productData)}% OFF)
+            (
+            {calculateDiscountPercentage(
+              productData
+            )}
+            % OFF)
           </h4>
         </div>
         <div className="flex items-center gap-2 px-2">
           <span>Ratings:</span>
           <span className="flex items-center gap-1 rounded-md border border-gray-400 bg-gray-200 px-2 text-sm font-medium text-secondary">
-            <MdStar className="text-orange-600" size={15} />{" "}
+            <MdStar
+              className="text-orange-600"
+              size={15}
+            />{" "}
             {productData.ratings}
           </span>
         </div>
         <div className="space-y-2 p-3">
-          <h1 className="font-medium">SELECT SIZE</h1>
+          <h1 className="font-medium">
+            SELECT SIZE
+          </h1>
           <div className="flex h-10 w-full gap-4 transition-all">
             {productData.sizes.map((sizes) => (
               <div
                 key={sizes}
-                onClick={(e) => sizeSetter(e.currentTarget.innerText)}
+                onClick={(e) =>
+                  sizeSetter(
+                    e.currentTarget.innerText
+                  )
+                }
                 className={`relative ${
-                  size === sizes && "bg-gray-600 text-gray-100"
+                  size === sizes &&
+                  "bg-gray-600 text-gray-100"
                 } flex  h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-gray-600 transition-transform`}
               >
-                <span className="absolute">{sizes}</span>
+                <span className="absolute">
+                  {sizes}
+                </span>
               </div>
             ))}
           </div>
         </div>
         <div className="flex gap-3 p-4 md:flex-wrap lg:flex-nowrap">
-          {isAuth && isProductInCart(productData, userData) ? (
+          {isAuth &&
+          isProductInCart(
+            productData,
+            userData
+          ) ? (
             <button
               className="h-10 w-full rounded-md border border-gray-600 bg-gray-600 text-gray-50 transition-all hover:bg-gray-700"
               onClick={() =>
-                isAuth ? router.push("/cart") : router.push("/login")
+                isAuth
+                  ? router.push("/cart")
+                  : router.push("/login")
               }
             >
               GO TO BAG
@@ -112,21 +153,31 @@ const SingleProductCard = ({
                 isAuth
                   ? size
                     ? addToCartFunc()
-                    : toast("please select size!", {
-                        position: "bottom-center",
-                        icon: "⚠️",
-                      })
+                    : toast(
+                        "please select size!",
+                        {
+                          position:
+                            "bottom-center",
+                          icon: "⚠️",
+                        }
+                      )
                   : router.push("/login")
               }
             >
               ADD TO BAG
             </button>
           )}
-          {isAuth && isProductInWishlist({ userData, productData }) ? (
+          {isAuth &&
+          isProductInWishlist({
+            userData,
+            productData,
+          }) ? (
             <button
               className="h-10 w-full rounded-md border border-gray-600  transition-all hover:bg-gray-200 active:bg-gray-300"
               onClick={() =>
-                isAuth ? router.push("/wishlist") : router.push("/login")
+                isAuth
+                  ? router.push("/wishlist")
+                  : router.push("/login")
               }
             >
               GO TO WISHLIST
@@ -135,7 +186,9 @@ const SingleProductCard = ({
             <button
               className="h-10 w-full rounded-md border border-gray-600 transition-all hover:bg-gray-200 active:bg-gray-300"
               onClick={() =>
-                isAuth ? addToWishlistFunc() : router.push("/login")
+                isAuth
+                  ? addToWishlistFunc()
+                  : router.push("/login")
               }
             >
               ADD TO WISHLIST
