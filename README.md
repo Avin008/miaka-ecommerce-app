@@ -14,13 +14,13 @@
 - Clone the project
 
 ```bash
-https://github.com/Avin008/ecommerce-app
+https://github.com/Avin008/miaka-ecommerce-app
 ```
 
 - Go to the project directory
 
 ```bash
-  cd ecommerce-app
+  cd miaka-ecommerce-app
 ```
 
 - Install dependencies
