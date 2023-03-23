@@ -19,22 +19,28 @@ const initialState: InitialState = {
 };
 
 const Login = (): React.ReactElement => {
-  const [userData, setUserData] = useState<InitialState>(initialState);
+  const [userData, setUserData] =
+    useState<InitialState>(initialState);
   const router = useRouter();
 
-  const addAuth = useAuthStore((state: any) => state.addAuth);
+  const addAuth = useAuthStore(
+    (state: any) => state.addAuth
+  );
 
   const guestLogin = () => {
     setUserData((prev) => ({
       ...prev,
       email: "johndoe@gmail.com",
-      password: "123456",
+      password: "johndoe@1234",
     }));
   };
 
   const loginUser = async () => {
     try {
-      const uid = await loginFunc(userData.email, userData.password);
+      const uid = await loginFunc(
+        userData.email,
+        userData.password
+      );
       router.push("/");
       addAuth(uid);
       toast.success("user successfully logged in!", {
@@ -50,7 +56,9 @@ const Login = (): React.ReactElement => {
     loginUser();
   };
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { name, value } = e.currentTarget;
     setUserData((prev) => ({
       ...prev,
@@ -71,7 +79,9 @@ const Login = (): React.ReactElement => {
       </Head>
       <form onSubmit={handleSubmit}>
         <div className="m-auto h-fit w-96 space-y-2 rounded-md border border-gray-300 bg-slate-50 p-6 shadow-md">
-          <h1 className="text-2xl font-semibold text-gray-600">Login</h1>
+          <h1 className="text-2xl font-semibold text-gray-600">
+            Login
+          </h1>
           <div className="space-y-1">
             <span className="flex flex-col space-y-1">
               <label htmlFor="email">Email</label>
