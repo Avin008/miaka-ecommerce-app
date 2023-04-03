@@ -1,8 +1,5 @@
 <h1 align="center">Miaka - An Ecommerce App</h1>
 
-<img width="948" alt="Screenshot_20230222_020918" src="https://user-images.githubusercontent.com/32406268/229598082-f1014aea-a33d-4919-ac49-13eec74fa375.png">
-
-
 <h2>Features</h2>
 <ul>
 <li>Authentication - Login/Signup</li>
