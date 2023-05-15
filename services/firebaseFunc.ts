@@ -11,18 +11,36 @@ import {
   DocumentData,
   getDoc,
   getDocs,
+  limit,
+  orderBy,
+  query,
   setDoc,
+  startAfter,
   updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "./firebaseConfig";
 
-const signupFunc = async (email: string, password: string): Promise<string> => {
-  const res = await createUserWithEmailAndPassword(auth, email, password);
+const signupFunc = async (
+  email: string,
+  password: string
+): Promise<string> => {
+  const res = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
   return res.user.uid;
 };
 
-const loginFunc = async (email: string, password: string): Promise<string> => {
-  const res = await signInWithEmailAndPassword(auth, email, password);
+const loginFunc = async (
+  email: string,
+  password: string
+): Promise<string> => {
+  const res = await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
   return res.user.uid;
 };
 
@@ -53,7 +71,10 @@ const getCollectionData = async (
   return data;
 };
 
-const getSingleDoc = async (collectionName: string, docID: string) => {
+const getSingleDoc = async (
+  collectionName: string,
+  docID: string
+) => {
   const docRef = doc(db, collectionName, docID);
   const res = await getDoc(docRef);
   const data = res.data();
@@ -64,24 +85,53 @@ const signoutFunc = async (): Promise<void> => {
   await signOut(auth);
 };
 
-const addToWishlist = async (userDocumentId: string, item: any) => {
+const addToWishlist = async (
+  userDocumentId: string,
+  item: any
+) => {
   const docRef = doc(db, "users", userDocumentId);
   await updateDoc(docRef, { wishlist: arrayUnion(item) });
 };
 
-const removeFromWishlist = async (userDocumentID: string, item: any) => {
+const removeFromWishlist = async (
+  userDocumentID: string,
+  item: any
+) => {
   const docRef = doc(db, "users", userDocumentID);
   await updateDoc(docRef, { wishlist: arrayRemove(item) });
 };
 
-const addToCart = async (userDocumentID: string, item: any) => {
+const addToCart = async (
+  userDocumentID: string,
+  item: any
+) => {
   const docRef = doc(db, "users", userDocumentID);
   await updateDoc(docRef, { cart: arrayUnion(item) });
 };
 
-const removeFromCart = async (userDocumentID: string, item: any) => {
+const removeFromCart = async (
+  userDocumentID: string,
+  item: any
+) => {
   const docRef = doc(db, "users", userDocumentID);
   await updateDoc(docRef, { cart: arrayRemove(item) });
+};
+
+const getProductsData = async ({ pageParam = 0 }) => {
+  const collectionRef = collection(db, "products");
+  const q = query(
+    collectionRef,
+    orderBy("price"),
+    startAfter(pageParam),
+    limit(9)
+  );
+
+  const docRefs = (await getDocs(q)).docs;
+  const docs = docRefs.map((x) => x.data());
+  return {
+    docRef: docRefs[docRefs.length - 1],
+    docs: docs,
+  };
 };
 
 export {
@@ -95,4 +145,5 @@ export {
   removeFromWishlist,
   addToCart,
   removeFromCart,
+  getProductsData,
 };
